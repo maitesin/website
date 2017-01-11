@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oscar Forner's personal website</title>
+  <style>
+  body {
+    font-family: sans-serif;
+  }
+  nav {
+    float: right;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+    </nav>
+  </header>
+  <main>
+    {% block main %} {% endblock %}
+  </main>
+  </body>
+</html>
