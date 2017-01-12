@@ -2,26 +2,177 @@
 <html>
 <head>
   <title>Oscar Forner's personal website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <style>
-  body {
+  /*
+   * Global resets
+   */
+  html {
     font-family: sans-serif;
   }
-  nav {
-    float: right;
+  @media (min-width: 48em) {
+    html {
+      font-size: 16px;
+    }
   }
+  @media (min-width: 58em) {
+    html {
+      font-size: 20px;
+    }
+  }
+
+  /*
+   * Sidebar
+   */
+   .sidebar {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: rgba(255,255,255,.5);
+      background-color: #202020;
+    }
+    @media (min-width: 48em) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 18rem;
+        text-align: left;
+      }
+    }
+
+    /* Sidebar links */
+    .sidebar a {
+      color: #fff;
+    }
+
+    /* About section */
+    .sidebar-about h1 {
+      color: #fff;
+      margin-top: 0;
+      font-family: "Abril Fatface", serif;
+      font-size: 3rem;
+    }
+    .sidebar-about a {
+      text-decoration: none;
+    }
+    .sidebar-about a:hover,
+    .sidebar-about a:focus {
+      text-decoration: underline;
+    }
+
+    .sidebar-pic {
+      border-radius: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    /* Sidebar nav */
+    .sidebar-nav {
+      margin-bottom: 1rem;
+    }
+    .sidebar-nav-item {
+      display: block;
+      line-height: 1.75;
+      text-decoration: none;
+    }
+    a.sidebar-nav-item:hover,
+    a.sidebar-nav-item:focus {
+      text-decoration: underline;
+    }
+    a.sidebar-nav-item:active {
+      font-weight: bold;
+    }
+    a.sidebar-contact-item {
+      text-decoration: none;
+    }
+
+    .sidebar-info {
+      font-size: 1.2rem;
+    }
+
+
+    /* Sticky sidebar
+     *
+     * Add the `sidebar-sticky` class to the sidebar's container to affix it the
+     * contents to the bottom of the sidebar in tablets and up.
+     */
+
+    @media (min-width: 48em) {
+      .sidebar-sticky {
+        position: absolute;
+        right:  1rem;
+        bottom: 1rem;
+        left:   1rem;
+      }
+    }
+
+    /*
+     * Content
+     */
+
+    .content {
+      padding-top:    4rem;
+      padding-bottom: 4rem;
+    }
+
+    @media (min-width: 48em) {
+      .content {
+        max-width: 38rem;
+        margin-left: 20rem;
+        margin-right: 2rem;
+      }
+    }
+
+    @media (min-width: 64em) {
+      .content {
+        margin-left: 22rem;
+        margin-right: 4rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog">Blog</a>
-      <a href="/about">About</a>
-      <a href="/projects">Projects</a>
-    </nav>
-  </header>
-  <main>
+  <div class="sidebar">
+    <div class="container sidebar-sticky">
+      <div class="sidebar-about">
+        <img class="sidebar-pic" src="static/img/avatar.jpg"></img>
+        <h1>
+          <a href="/">Oscar Forner</a>
+        </h1>
+        <p class="sidebar-info">I am software engineer at VCA Technology. Learning Linux Kernel, passionate about GNU/Linux and OSS, enjoying algorithms and data structures.</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-nav-item" href="/">Home</a>
+        <a class="sidebar-nav-item" href="/blog">Blog</a>
+        <a class="sidebar-nav-item" href="/about">About</a>
+        <a class="sidebar-nav-item" href="/projects">Projects</a>
+      </nav>
+      <div class="sidebar-contact">
+        <a class="sidebar-contact-item" href="mailto:oscar.forner.martinez@gmail.com">
+          <i class="fa fa-fw fa-envelope-square fa-2x"></i>
+        </a>
+        <a class="sidebar-contact-item" href="http://twitter.com/oscar_forner">
+          <i class="fa fa-fw fa-twitter-square fa-2x"></i>
+        </a>
+        <a class="sidebar-contact-item" href="http://linkedin.com/in/oscarforner">
+          <i class="fa fa-fw fa-linkedin-square fa-2x"></i>
+        </a>
+        <a class="sidebar-contact-item" href="http://github.com/maitesin">
+          <i class="fa fa-fw fa-github fa-2x"></i>
+        </a>
+        <a class="sidebar-contact-item" href="https://www.youtube.com/channel/UCo_mgV5WLLpEDGLXbR29zKg">
+          <i class="fa fa-fw fa-youtube-square fa-2x"></i>
+        </a>
+        <a class="sidebar-contact-item" href="http://steamcommunity.com/id/maitesin/">
+          <i class="fa fa-fw fa-steam-square fa-2x"></i>
+        </a>
+      </div>
+      <p>&copy; 2017 Oscar Forner Martinez.</p>
+    </div>
+  </div>
+  <div class="content container">
     {% block main %} {% endblock %}
-  </main>
+  </div>
   </body>
 </html>
