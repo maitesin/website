@@ -34,13 +34,28 @@ class Post(models.Model):
         return self.title
 
     @staticmethod
-    def get_latest_posts(number):
-        return Post.objects.order_by('-pub_date')[:number]
+    def get_latest_posts(number = None):
+        posts = Post.objects.order_by('-pub_date')
+        return posts if number is None else posts[:number]
 
     @staticmethod
-    def get_latest_10_posts():
-        return get_latest_posts(10)
+    def get_latest_posts_with_category(category_name, number = None):
+        try:
+            category = Category.objects.get(name=category_name)
+        except Category.DoesNotExist:
+            return None
+        posts = Post.get_latest_posts().filter(category=category)
+        return posts if number is None else posts[:number]
 
+    @staticmethod
+    def get_latest_posts_with_tag(tag_name, number = None):
+        try:
+            tag = Tag.objects.get(name=tag_name)
+        except Tag.DoesNotExist:
+            return None
+        post_tag = PostTag.objects.filter(tag=tag)
+        return [elem.post for elem in post_tag]
+        
 class PostTag(models.Model):
     class Meta:
         unique_together = ('post', 'tag')
