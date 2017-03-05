@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <title>Oscar Forner's personal website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="/static/css/fornerio.css"/>
+  <link rel="stylesheet" type="text/css" href="{% static "css/fornerio.css" %}"/>
 </head>
 <body>
   <div class="sidebar">
     <div class="container sidebar-sticky">
       <div class="sidebar-about">
-        <img class="sidebar-pic" src="static/img/avatar.jpg"></img>
+        <img class="sidebar-pic" src="{% static "img/avatar.jpg" %}"></img>
         <h1>
           <a href="/">Oscar Forner</a>
         </h1>
