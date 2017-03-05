@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Tag(models.Model):
@@ -12,6 +13,12 @@ class Tag(models.Model):
     def get_list_of_tags():
         return Tag.objects.all()
 
+    def get_title(self):
+        return ''.join([char if char.isalnum() else '_' for char in self.name])
+
+    def get_url(self):
+        return reverse('Tag', args=[self.get_title()])
+
 class Category(models.Model):
     name = models.CharField(max_length=30)
 
@@ -21,6 +28,12 @@ class Category(models.Model):
     @staticmethod
     def get_list_of_categories():
         return Category.objects.all()
+
+    def get_title(self):
+        return ''.join([char if char.isalnum() else '_' for char in self.name])
+
+    def get_url(self):
+        return reverse('Category', args=[self.get_title()])
 
 class Post(models.Model):
     author = models.ForeignKey(User)
@@ -55,7 +68,14 @@ class Post(models.Model):
             return None
         post_tag = PostTag.objects.filter(tag=tag)
         return [elem.post for elem in post_tag]
-        
+
+    def get_title(self):
+        return ''.join([char if char.isalnum() else '_' for char in self.title])
+
+    def get_url(self):
+        time = self.pub_date
+        return reverse('Post', args=["%04d" % time.year, "%02d" % time.month, "%02d" % time.day, self.get_title()])
+
 class PostTag(models.Model):
     class Meta:
         unique_together = ('post', 'tag')
