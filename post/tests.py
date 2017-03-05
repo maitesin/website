@@ -125,14 +125,28 @@ class PostTests(TestCase):
         latest_with_tag_invalid = Post.get_latest_posts_with_tag("Tag Invalid")
         self.assertEquals(latest_with_tag_invalid, None)
 
+    def test_post_get_title(self):
+        now = timezone.now()
+        title_from_post = Post(author=User(), title="Post 11", content="Content of the eleventh post", category=Category(name="Category"), pub_date=now).get_title()
+        self.assertEquals(title_from_post, "Post_11")
+
     def test_post_get_url(self):
-        url_from_last_post = Post.get_latest_posts(1)[0].get_url()
-        self.assertEquals(url_from_last_post, "/2017/03/15/Post_11")
+        now = timezone.now()
+        url_from_post = Post(author=User(), title="Post 11", content="Content of the eleventh post", category=Category(name="Category"), pub_date=now).get_url()
+        self.assertEquals(url_from_post, "/%s/%02d/%02d/Post_11" % (now.year, now.month, now.day))
+
+    def test_category_get_title(self):
+        title_from_category = Category(name="Category 1").get_title()
+        self.assertEquals(title_from_category, "Category_1")
 
     def test_category_get_url(self):
-        url_from_category = Category.get_list_of_categories()[0].get_url()
+        url_from_category = Category(name="Category 1").get_url()
         self.assertEquals(url_from_category, "/category/Category_1")
 
+    def test_tag_get_title(self):
+        title_from_tag = Tag(name="Tag 1").get_title()
+        self.assertEquals(title_from_tag, "Tag_1")
+
     def test_tag_get_url(self):
-        url_from_tag = Tag.get_list_of_tags()[0].get_url()
+        url_from_tag = Tag(name="Tag 1").get_url()
         self.assertEquals(url_from_tag, "/tag/Tag_1")
