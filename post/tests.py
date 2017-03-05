@@ -117,10 +117,22 @@ class PostTests(TestCase):
         self.assertEquals(latest_with_tag_1[2].title, "Post 3")
         self.assertEquals(latest_with_tag_1[3].title, "Post 7")
 
-    def test_test_posts_with_empty_tag(self):
+    def test_posts_with_empty_tag(self):
         latest_with_tag_4 = Post.get_latest_posts_with_tag("Tag 4")
         self.assertEquals(latest_with_tag_4, [])
 
-    def test_test_posts_with_invalid_tag(self):
+    def test_posts_with_invalid_tag(self):
         latest_with_tag_invalid = Post.get_latest_posts_with_tag("Tag Invalid")
         self.assertEquals(latest_with_tag_invalid, None)
+
+    def test_post_get_url(self):
+        url_from_last_post = Post.get_latest_posts(1)[0].get_url()
+        self.assertEquals(url_from_last_post, "/2017/03/15/Post_11")
+
+    def test_category_get_url(self):
+        url_from_category = Category.get_list_of_categories()[0].get_url()
+        self.assertEquals(url_from_category, "/category/Category_1")
+
+    def test_tag_get_url(self):
+        url_from_tag = Tag.get_list_of_tags()[0].get_url()
+        self.assertEquals(url_from_tag, "/tag/Tag_1")
