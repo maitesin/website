@@ -76,6 +76,11 @@ class Post(models.Model):
         time = self.pub_date
         return reverse('Post', args=["%04d" % time.year, "%02d" % time.month, "%02d" % time.day, self.get_title()])
 
+    # TODO: Create unit test for this method
+    def get_tags(self):
+        post_tag = PostTag.objects.filter(post=self)
+        return [elem.tag for elem in post_tag]
+
 class PostTag(models.Model):
     class Meta:
         unique_together = ('post', 'tag')

@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic.list import ListView
 
 from .models import Tag, Post, Category, PostTag
 
-def index(request):
-    context = {}
-    return render(request, 'blog.html', context)
+class PostListView(ListView):
+    model = Post
+
+    def get_template_names(self):
+        return ['blog.html']
 
 def year(request, year):
     context = {}

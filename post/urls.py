@@ -3,7 +3,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name="Index"),
+    url(r'^$', views.PostListView.as_view(), name="Blog"),
     url(r'^(?P<year>[0-9]{4})$', views.year, name="Year"),
     url(r'^(?P<year>[0-9]{4})/$', views.year, name="YearSlash"),
     url(r'^(?P<year>[0-9]{4})/(?P<month>[0-9]{2})$', views.month, name="Month"),
