@@ -169,6 +169,22 @@ a.sidebar-contact-item {
   margin-bottom: .5rem;
 }
 
+.post-category a {
+  color: #303030;
+  text-decoration: none;
+}
+.post-category a:hover {
+  text-decoration: underline;;
+}
+
+.post-tag a {
+  color: #303030;
+  text-decoration: none;
+}
+.post-tag a:hover {
+  text-decoration: underline;;
+}
+
 .post-content {
   margin-top: 1rem;
 }

@@ -6,9 +6,9 @@
       <div class="post">
         <h1 class="post-title"><a href="{{ article.get_url }}">{{ article.title }}</a></h1>
         <span class="post-date"><i class="fa fa-fw fa-calendar fa-1x"></i>{{ article.pub_date|date }}</span>
-        <span class="post-category"><i class="fa fa-fw fa-folder-open fa-1x"></i>{{ article.category }}</span>
+        <span class="post-category"><a href="{{ article.category.get_url }}"><i class="fa fa-fw fa-folder-open fa-1x"></i>{{ article.category }}</a></span>
         {% for tag in article.get_tags %}
-          <span class="post-tag"><i class="fa fa-fw fa-tag fa-1x"></i>{{ tag }}</span>
+          <span class="post-tag"><a href="{{ tag.get_url }}"><i class="fa fa-fw fa-tag fa-1x"></i>{{ tag }}</a></span>
         {% endfor %}
         <div class="post-content">
           {{ article.content }}
