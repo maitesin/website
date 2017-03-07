@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+from markdown import markdown
+import re
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=30)
@@ -75,6 +78,15 @@ class Post(models.Model):
     def get_url(self):
         time = self.pub_date
         return reverse('Post', args=["%04d" % time.year, "%02d" % time.month, "%02d" % time.day, self.get_title()])
+
+    # TODO: Create unit test for this method
+    def get_content(self):
+        return markdown(self.content, output_format="html5")
+
+    # TODO: Create unit test for this method
+    def get_abstract(self):
+        cleanr = re.compile('<.*?>')
+        return re.sub(cleanr, '', self.get_content())[:200] + '...'
 
     # TODO: Create unit test for this method
     def get_tags(self):

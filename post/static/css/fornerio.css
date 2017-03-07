@@ -185,6 +185,8 @@ a.sidebar-contact-item {
   text-decoration: underline;;
 }
 
-.post-content {
+.post-abstract {
   margin-top: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
 }

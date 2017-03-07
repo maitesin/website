@@ -10,8 +10,8 @@
         {% for tag in article.get_tags %}
           <span class="post-tag"><a href="{{ tag.get_url }}"><i class="fa fa-fw fa-tag fa-1x"></i>{{ tag }}</a></span>
         {% endfor %}
-        <div class="post-content">
-          {{ article.content }}
+        <div class="post-abstract">
+          {{ article.get_abstract }}
         </div>
       </div>
     {% empty %}

@@ -10,6 +10,9 @@ class PostListView(ListView):
     def get_template_names(self):
         return ['blog.html']
 
+    def get_queryset(self):
+        return self.model.get_latest_posts(5)
+
 def year(request, year):
     context = {}
     return render(request, 'year.html', context)
