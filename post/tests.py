@@ -98,7 +98,7 @@ class PostTests(TestCase):
         self.assertEquals(latest_10[9].title, "Post 2")
 
     def test_latest_posts_with_category(self):
-        latest_with_category_1 = Post.get_latest_posts_with_category("Category 1")
+        latest_with_category_1 = Post.get_latest_posts_with_category("Category_1")
         self.assertEquals(len(latest_with_category_1), 6)
         self.assertEquals(latest_with_category_1[0].title, "Post 11")
         self.assertEquals(latest_with_category_1[1].title, "Post 9")
@@ -108,11 +108,11 @@ class PostTests(TestCase):
         self.assertEquals(latest_with_category_1[5].title, "Post 1")
 
     def test_latest_posts_with_invalid_category(self):
-        latest_with_category_invalid = Post.get_latest_posts_with_category("Category Invalid")
-        self.assertEquals(latest_with_category_invalid, None)
+        latest_with_category_invalid = Post.get_latest_posts_with_category("Category_Invalid")
+        self.assertEquals(len(latest_with_category_invalid), 0)
 
     def test_latest_posts_with_tag(self):
-        latest_with_tag_1 = Post.get_latest_posts_with_tag("Tag 1")
+        latest_with_tag_1 = Post.get_latest_posts_with_tag("Tag_1")
         self.assertEquals(len(latest_with_tag_1), 4)
         self.assertEquals(latest_with_tag_1[0].title, "Post 1")
         self.assertEquals(latest_with_tag_1[1].title, "Post 2")
@@ -120,12 +120,12 @@ class PostTests(TestCase):
         self.assertEquals(latest_with_tag_1[3].title, "Post 7")
 
     def test_posts_with_empty_tag(self):
-        latest_with_tag_4 = Post.get_latest_posts_with_tag("Tag 4")
+        latest_with_tag_4 = Post.get_latest_posts_with_tag("Tag_4")
         self.assertEquals(latest_with_tag_4, [])
 
     def test_posts_with_invalid_tag(self):
-        latest_with_tag_invalid = Post.get_latest_posts_with_tag("Tag Invalid")
-        self.assertEquals(latest_with_tag_invalid, None)
+        latest_with_tag_invalid = Post.get_latest_posts_with_tag("Tag_Invalid")
+        self.assertEquals(latest_with_tag_invalid, [])
 
     def test_post_get_title(self):
         now = timezone.now()
