@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block main %}
+  <h1 class="page-title">{{title}}</h1>
   <div class="posts">
     {% for article in object_list %}
       <div class="post">
@@ -18,5 +19,7 @@
       <h1>No articles yet.</h1>
     {% endfor %}
   </div>
-
+  {% if title == "Latest posts" %}
+    <h1 class="page-footer"><a href="/all">All posts</a></h1>
+  {% endif %}
 {% endblock %}

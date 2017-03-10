@@ -1,5 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block main %}
-  <h1>Post</h1>
+  <div class="post">
+    <h1 class="post-title"><a href="{{ object.get_url }}">{{ object.title }}</a></h1>
+    <span class="post-date"><i class="fa fa-fw fa-calendar fa-1x"></i>{{ object.pub_date|date }}</span>
+    <span class="post-category"><a href="{{ object.category.get_url }}"><i class="fa fa-fw fa-folder-open fa-1x"></i>{{ object.category }}</a></span>
+    {% for tag in object.get_tags %}
+      <span class="post-tag"><a href="{{ tag.get_url }}"><i class="fa fa-fw fa-tag fa-1x"></i>{{ tag }}</a></span>
+    {% endfor %}
+    <div class="post-content">
+      {{ object.get_content | safe }}
+    </div>
+  </div>
 {% endblock %}
