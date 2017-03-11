@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
@@ -72,10 +72,7 @@ class PostDetailView(DetailView):
         return ['post.html']
 
     def get_object(self):
-        for post in self.model.get_posts_from_year_month_day(self.kwargs['year'], self.kwargs['month'], self.kwargs['day']):
-            if post.get_title() == self.kwargs['title']:
-                return post
-        raise Http404("Post does not exist")
+        return self.model.get_posts_from_year_month_day_title(self.kwargs['year'], self.kwargs['month'], self.kwargs['day'], self.kwargs['title'])
 
 def projects(request):
     context = {}

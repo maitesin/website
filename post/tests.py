@@ -1,5 +1,7 @@
 from django.test import TestCase
 from django.utils import timezone
+from django.utils.dateparse import parse_datetime
+from django.http import Http404
 
 from django.contrib.auth.models import User
 from .models import Post, Category, Tag, PostTag
@@ -25,7 +27,7 @@ class PostTests(TestCase):
         tag_4 = Tag(name="Tag 4") # Not used
         tag_4.save()
 
-        now = timezone.now()
+        now = parse_datetime("2012-02-21 10:28:45")
         post_1 = Post(author=my_user, title="Post 1", content="Content of the first post", category=category_1, pub_date=now, draft=False)
         post_1.save()
         post_2 = Post(author=my_user, title="Post 2", content="Content of the second post", category=category_2, pub_date=now + timezone.timedelta(days=1), draft=False)
@@ -108,8 +110,7 @@ class PostTests(TestCase):
         self.assertEquals(latest_with_category_1[5].title, "Post 1")
 
     def test_latest_posts_with_invalid_category(self):
-        latest_with_category_invalid = Post.get_latest_posts_with_category("Category_Invalid")
-        self.assertEquals(len(latest_with_category_invalid), 0)
+        self.assertRaises(Http404, Post.get_latest_posts_with_category, ["Category_Invalid"])
 
     def test_latest_posts_with_tag(self):
         latest_with_tag_1 = Post.get_latest_posts_with_tag("Tag_1")
@@ -124,8 +125,7 @@ class PostTests(TestCase):
         self.assertEquals(latest_with_tag_4, [])
 
     def test_posts_with_invalid_tag(self):
-        latest_with_tag_invalid = Post.get_latest_posts_with_tag("Tag_Invalid")
-        self.assertEquals(latest_with_tag_invalid, [])
+        self.assertRaises(Http404, Post.get_latest_posts_with_tag, ["Tag_Invalid"])
 
     def test_post_get_title(self):
         now = timezone.now()
@@ -168,3 +168,48 @@ class PostTests(TestCase):
         self.assertEquals(len(latest_10[2].get_tags()), 1)
         self.assertEquals(len(latest_10[3].get_tags()), 2)
         self.assertEquals(len(latest_10[4].get_tags()), 3)
+
+    def test_tag_with_title_exist(self):
+        tag = Tag.get_tag_with_title("Tag_1")
+        self.assertEquals(tag.name, "Tag 1")
+
+    def test_tag_with_title_not_exist(self):
+        self.assertRaises(Http404, Tag.get_tag_with_title, "Tag_5")
+
+    def test_category_with_title_exist(self):
+        category = Category.get_category_with_title("Category_1")
+        self.assertEquals(category.name, "Category 1")
+
+    def test_category_with_title_not_exist(self):
+        self.assertRaises(Http404, Category.get_category_with_title, "Category_3")
+
+    def test_posts_from_year_success(self):
+        posts_from_2012 = Post.get_posts_from_year(2012)
+        self.assertEquals(len(posts_from_2012), 11)
+
+    def test_posts_from_year_fail(self):
+        posts_from_2013 = Post.get_posts_from_year(2013)
+        self.assertEquals(len(posts_from_2013), 0)
+
+    def test_posts_from_year_month_success(self):
+        posts_from_02_2012 = Post.get_posts_from_year_month(2012, 2)
+        self.assertEquals(len(posts_from_02_2012), 9)
+
+    def test_posts_from_year_month_fail(self):
+        posts_from_03_2013 = Post.get_posts_from_year_month(2013, 3)
+        self.assertEquals(len(posts_from_03_2013), 0)
+
+    def test_posts_from_year_month_day_success(self):
+        posts_from_21_02_2012 = Post.get_posts_from_year_month_day(2012, 2, 21)
+        self.assertEquals(len(posts_from_21_02_2012), 1)
+
+    def test_posts_from_year_month_day_fail(self):
+        posts_from_22_03_2013 = Post.get_posts_from_year_month_day(2013, 3, 22)
+        self.assertEquals(len(posts_from_22_03_2013), 0)
+
+    def test_posts_from_year_month_day_title_success(self):
+        post_title_from_21_02_2012 = Post.get_posts_from_year_month_day_title(2012, 2, 21, 'Post_1')
+        self.assertEquals(post_title_from_21_02_2012.title, 'Post 1')
+
+    def test_posts_from_year_month_day_title_fail(self):
+        self.assertRaises(Http404, Post.get_posts_from_year_month_day_title, 2013, 3, 22, 'My_awesome_post')
