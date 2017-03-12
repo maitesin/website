@@ -397,3 +397,7 @@ p.copyright {
 .page-footer a:hover {
   text-decoration: underline;
 }
+
+.share-button {
+  margin-right: 0.5rem;
+}

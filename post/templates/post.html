@@ -12,7 +12,17 @@
       {{ object.get_content | safe }}
     </div>
   </div>
-
+  <!--Share buttons-->
+  <div class="post-share">
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="{{ absolute_uri }}" data-a2a-title="I liked @oscar_forner new post">
+    <a class="share-button a2a_button_twitter"></a>
+    <a class="share-button a2a_button_linkedin"></a>
+    <a class="share-button a2a_button_facebook"></a>
+    <a class="share-button a2a_button_google_plus"></a>
+    </div>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+  </div>
+  <!--Disqus comments-->
   <div id="disqus_thread"></div>
   <script>
   (function() {

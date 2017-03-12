@@ -73,6 +73,11 @@ class PostDetailView(DetailView):
 
     def get_object(self):
         return self.model.get_posts_from_year_month_day_title(self.kwargs['year'], self.kwargs['month'], self.kwargs['day'], self.kwargs['title'])
+    
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context['absolute_uri'] = self.request.build_absolute_uri()
+        return context
 
 def projects(request):
     context = {}
