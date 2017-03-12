@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.contrib.syndication.views import Feed
+from django.utils.feedgenerator import Atom1Feed
 
 from .models import Tag, Post, Category, PostTag
 
@@ -73,11 +75,33 @@ class PostDetailView(DetailView):
 
     def get_object(self):
         return self.model.get_posts_from_year_month_day_title(self.kwargs['year'], self.kwargs['month'], self.kwargs['day'], self.kwargs['title'])
-    
+
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context['absolute_uri'] = self.request.build_absolute_uri()
         return context
+
+class LatestPostFeed(Feed):
+    title = "Oscar Forner's personal website"
+    link = '/rss/'
+    description = "I am a software engineer at VCA Technology. Passionate about GNU/Linux and Open Source. Interested in system programming languages, operating systems and compilers."
+
+    def items(self):
+        return Post.get_latest_posts(10)
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.get_abstract()
+
+    def item_link(self, item):
+        print("Getting URL: %s" % item.get_url())
+        return item.get_url()
+
+class LatestPostAtom(LatestPostFeed):
+    feed_type = Atom1Feed
+    subtitle = LatestPostFeed.description
 
 def projects(request):
     context = {}

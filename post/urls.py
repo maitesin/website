@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^projects/?$', views.projects, name="Projects"),
     url(r'^resume/?$', views.resume, name="Resume"),
     url(r'^about/?$', views.about, name="About"),
+    url(r'^rss/?$', views.LatestPostFeed(), name="RSS"),
+    url(r'^atom/$', views.LatestPostAtom(), name="Atom"),
 ]
