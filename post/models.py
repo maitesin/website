@@ -111,8 +111,10 @@ class Post(models.Model):
         return markdown(self.content, output_format="html5")
 
     def get_abstract(self):
-        cleanr = re.compile('<.*?>')
-        return re.sub(cleanr, '', self.get_content())[:200] + '...'
+        clean = re.compile('<.*?>')
+        content = re.sub(clean, '', self.get_content())
+        pos = content.find(' ', 200)
+        return content[:pos] + '...'
 
     def get_tags(self):
         post_tag = PostTag.objects.filter(post=self)
