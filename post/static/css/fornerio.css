@@ -9,11 +9,11 @@ html {
     font-size: 16px;
   }
 }
-@media (min-width: 58em) {
+/*@media (min-width: 58em) {
   html {
     font-size: 20px;
   }
-}
+}*/
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
@@ -38,15 +38,15 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
-  font-size: 2rem;
+  /*font-size: 2rem;*/
 }
 h2 {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
 }
 h3 {
   margin-top: 1.5rem;
-  font-size: 1.25rem;
+  /*font-size: 1.25rem;*/
 }
 h4, h5, h6 {
   margin-top: 1rem;
@@ -216,7 +216,7 @@ tbody tr:nth-child(odd) th {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18rem;
+    width: 17rem;
     text-align: left;
   }
 }
@@ -231,7 +231,7 @@ tbody tr:nth-child(odd) th {
   color: #fff;
   margin-top: 0;
   font-family: "Abril Fatface", serif;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .sidebar-about a {
   text-decoration: none;
@@ -268,7 +268,7 @@ a.sidebar-contact-item {
 }
 
 .sidebar-info {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -302,16 +302,9 @@ p.copyright {
 
 @media (min-width: 48em) {
   .content {
-    max-width: 38rem;
-    margin-left: 20rem;
+    max-width: 60rem;
+    margin-left: 19rem;
     margin-right: 2rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .content {
-    margin-left: 22rem;
-    margin-right: 4rem;
   }
 }
 
@@ -331,6 +324,7 @@ p.copyright {
 .post-title a {
   color: #303030;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 .post-title {
   margin-top: 0;
@@ -385,7 +379,7 @@ p.copyright {
 .page-title,
 .page-footer {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-top: -1.5rem;
   margin-bottom: 2rem;
 }
