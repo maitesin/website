@@ -217,6 +217,7 @@ tbody tr:nth-child(odd) th {
     left: 0;
     bottom: 0;
     width: 17rem;
+    min-height: 35rem;
     text-align: left;
   }
 }
