@@ -104,8 +104,22 @@ class LatestPostAtom(LatestPostFeed):
     subtitle = LatestPostFeed.description
 
 def projects(request):
-    context = {}
+    context = {'projects' : [{'title':'Trie, TST & Radix Tree', 'url':'tries', 'img':'tries.png'},
+                             {'title':'ACC (ARM C Compiler)', 'url':'acc', 'img':'acc.png'},
+                             {'title':'Personal website', 'url':'personal', 'img':'website.png'},
+                             {'title':'Placeholder 4', 'url':'place4', 'img':'place4.png'},
+                             {'title':'Placeholder 5', 'url':'place5', 'img':'place5.png'},
+                             {'title':'Placeholder 6', 'url':'place6', 'img':'place6.png'}]}
     return render(request, 'projects.html', context)
+
+def tries(request):
+    return render(request, 'tries.html', {})
+
+def acc(request):
+    return render(request, 'acc.html', {})
+
+def personal(request):
+    return render(request, 'personal.html', {})
 
 def resume(request):
     context = {}
