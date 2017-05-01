@@ -233,6 +233,7 @@ tbody tr:nth-child(odd) th {
   margin-top: 0;
   font-family: "Abril Fatface", serif;
   font-size: 2rem;
+  text-align: center;
 }
 .sidebar-about a {
   text-decoration: none;
@@ -251,7 +252,9 @@ tbody tr:nth-child(odd) th {
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
+  text-align: center;
 }
+
 .sidebar-nav-item {
   display: block;
   line-height: 1.75;
@@ -378,7 +381,8 @@ p.copyright {
 }
 
 .page-title,
-.page-footer {
+.page-footer,
+.projects-title {
   text-align: center;
   font-size: 2rem;
   margin-top: -1.5rem;
@@ -396,3 +400,78 @@ p.copyright {
 .share-button {
   margin-right: 0.5rem;
 }
+
+
+/*
+ * Projects
+ *
+ */
+ .project-grid {
+   display: grid;
+   text-align: center;
+   grid-auto-flow: row dense;
+   grid-template-columns: 300px;
+   grid-template-rows: 200px 200px 200px 200px 200px 200px;
+   grid-gap: 15px 15px;
+ }
+
+ @media (min-width: 59em) {
+   .project-grid {
+     grid-template-columns: 300px 300px;
+     grid-template-rows: 200px 200px 200px;
+   }
+ }
+
+ @media (min-width: 79em) {
+   .project-grid {
+     grid-template-columns: 300px 300px 300px;
+     grid-template-rows: 200px 200px 200px;
+   }
+ }
+
+ .project-grid-item {
+   position: relative;
+ }
+
+ .project-grid-item:hover {
+
+ }
+
+ .project-overlay {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 100%;
+   width: 100%;
+   opacity: 0;
+   transition: .5s ease;
+   background-color: #303030;
+ }
+
+ .project-grid-item:hover .project-overlay {
+   opacity: 1;
+ }
+
+ .project-text {
+   color: white;
+   font-size: 20px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   ms-transform: translate(-50%, -50%);
+ }
+
+ .projects-title {
+   text-align: center;
+   font-size: 1rem;
+   margin-top: -1.5rem;
+   margin-bottom: 2rem;
+ }
+
+ .project-details-image {
+   margin-left: auto;
+   margin-right: auto;
+ }
