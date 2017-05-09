@@ -120,6 +120,32 @@ class Post(models.Model):
         post_tag = PostTag.objects.filter(post=self)
         return [elem.tag for elem in post_tag]
 
+    def has_next(self):
+        return self.__get_next() != None
+
+    def has_previous(self):
+        return self.__get_previous() != None
+
+    def __get_next(self):
+        posts = Post.objects.order_by('-pub_date').filter(pub_date__gt=self.pub_date).filter(draft=False)
+        return posts[len(posts)-1] if len(posts) > 0 else None
+
+    def get_next_url(self):
+        post = self.__get_next().get_url()
+
+    def get_next_title(self):
+        return self.__get_next().get_title()
+
+    def __get_previous(self):
+        posts = Post.objects.order_by('-pub_date').filter(pub_date__lt=self.pub_date).filter(draft=False)
+        return posts[0] if len(posts) > 0 else None
+
+    def get_previous_url(self):
+        return self.__get_previous().get_url()
+
+    def get_previous_title(self):
+        return self.__get_previous().get_title()
+
 class PostTag(models.Model):
     class Meta:
         unique_together = ('post', 'tag')

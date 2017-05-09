@@ -380,6 +380,10 @@ p.copyright {
   text-justify: inter-word;
 }
 
+.post-content h1, h2, h3, h4, h5, h6 {
+  text-decoration: underline;
+}
+
 .page-title,
 .page-footer,
 .projects-title {
@@ -395,6 +399,23 @@ p.copyright {
 }
 .page-footer a:hover {
   text-decoration: underline;
+}
+
+.previous-next-post {
+  margin-bottom: 2em;
+  padding-top: 2em;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-top: 1px solid #9a9a9a;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.previous-post {
+  float: left;
+}
+
+.next-post {
+  float: right;
 }
 
 .share-button {

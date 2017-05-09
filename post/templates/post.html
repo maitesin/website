@@ -12,6 +12,14 @@
       {{ object.get_content | safe }}
     </div>
   </div>
+  <div class="previous-next-post">
+    {% if object.has_previous %}
+      <div class="previous-post"><a href="{{ object.get_previous_url }}">{{ object.get_previous_title }}</a></div>
+    {% endif %}
+    {% if object.has_next %}
+      <div class="next-post"><a href="{{ object.get_next_url }}">{{ object.get_next_title }}</a></div>
+    {% endif %}
+  </div>
   <!--Share buttons-->
   <div class="post-share">
     <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="{{ absolute_uri }}" data-a2a-title="I liked @oscar_forner new post">
