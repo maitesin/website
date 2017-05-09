@@ -113,7 +113,7 @@ class Post(models.Model):
     def get_abstract(self):
         clean = re.compile('<.*?>')
         content = re.sub(clean, '', self.get_content())
-        pos = content.find(' ', 200)
+        pos = content.find(' ', 500)
         return content[:pos] + '...'
 
     def get_tags(self):
