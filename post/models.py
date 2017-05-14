@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 from django.urls import reverse
 from django.http import Http404
 
@@ -114,7 +115,10 @@ class Post(models.Model):
         clean = re.compile('<.*?>')
         content = re.sub(clean, '', self.get_content())
         pos = content.find(' ', 500)
-        return content[:pos] + '...'
+        if pos != -1:
+            return content[:pos] + '...'
+        else:
+            return content
 
     def get_tags(self):
         post_tag = PostTag.objects.filter(post=self)
@@ -131,7 +135,7 @@ class Post(models.Model):
         return posts[len(posts)-1] if len(posts) > 0 else None
 
     def get_next_url(self):
-        post = self.__get_next().get_url()
+        return self.__get_next().get_url()
 
     def get_next_title(self):
         return self.__get_next().get_title()

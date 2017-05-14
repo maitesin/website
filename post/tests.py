@@ -161,7 +161,7 @@ class PostTests(TestCase):
     def test_post_get_abstract(self):
         now = timezone.now()
         content_of_post = Post(author=User(), title="Post 11", content="# Wololo", category=Category(name="Category"), pub_date=now).get_abstract()
-        self.assertEquals(content_of_post, "Wololo...")
+        self.assertEquals(content_of_post, "Wololo")
 
     def test_post_get_tags(self):
         latest_10 = Post.get_latest_posts(10)
@@ -213,3 +213,51 @@ class PostTests(TestCase):
 
     def test_posts_from_year_month_day_title_fail(self):
         self.assertRaises(Http404, Post.get_posts_from_year_month_day_title, 2013, 3, 22, 'My_awesome_post')
+
+    def test_has_previous_post_middle(self):
+        latest = Post.get_latest_posts()
+        self.assertTrue(latest[1].has_previous())
+
+    def test_previous_post_middle(self):
+        latest = Post.get_latest_posts()
+        pubdate = latest[2].pub_date
+        self.assertEquals(latest[1].get_previous_title(), latest[2].get_title())
+        self.assertEquals(latest[1].get_previous_url(), "/%s/%02d/%02d/Post_9" % (pubdate.year, pubdate.month, pubdate.day))
+
+    def test_has_next_post_middle(self):
+        latest = Post.get_latest_posts()
+        self.assertTrue(latest[1].has_next())
+
+    def test_next_post_middle(self):
+        latest = Post.get_latest_posts()
+        pubdate = latest[0].pub_date
+        self.assertEquals(latest[1].get_next_title(), latest[0].get_title())
+        self.assertEquals(latest[1].get_next_url(), "/%s/%02d/%02d/Post_11" % (pubdate.year, pubdate.month, pubdate.day))
+
+    def test_has_previous_post_beginning(self):
+        latest = Post.get_latest_posts()
+        self.assertFalse(latest[len(latest)-1].has_previous())
+
+    def test_has_next_post_beginning(self):
+        latest = Post.get_latest_posts()
+        self.assertTrue(latest[len(latest)-1].has_next())
+
+    def test_next_post_beginning(self):
+        latest = Post.get_latest_posts()
+        pubdate = latest[len(latest)-2].pub_date
+        self.assertEquals(latest[len(latest)-1].get_next_title(), latest[len(latest)-2].get_title())
+        self.assertEquals(latest[len(latest)-1].get_next_url(), "/%s/%02d/%02d/Post_2" % (pubdate.year, pubdate.month, pubdate.day))
+
+    def test_has_previous_post_ending(self):
+        latest = Post.get_latest_posts()
+        self.assertTrue(latest[0].has_previous())
+
+    def test_previous_post_ending(self):
+        latest = Post.get_latest_posts()
+        pubdate = latest[1].pub_date
+        self.assertEquals(latest[0].get_previous_title(), latest[1].get_title())
+        self.assertEquals(latest[0].get_previous_url(), "/%s/%02d/%02d/Post_10" % (pubdate.year, pubdate.month, pubdate.day))
+
+    def test_has_next_post_ending(self):
+        latest = Post.get_latest_posts()
+        self.assertFalse(latest[0].has_next())
