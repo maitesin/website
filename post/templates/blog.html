@@ -12,7 +12,7 @@
           <span class="post-tag"><a href="{{ tag.get_url }}"><i class="fa fa-fw fa-tag fa-1x"></i>{{ tag }}</a></span>
         {% endfor %}
         <div class="post-abstract">
-          {{ article.get_abstract }}
+          {{ article.get_abstract }} <span class="post-more"><a href="{{ article.get_url }}">(read more)</a></span>
         </div>
       </div>
     {% empty %}

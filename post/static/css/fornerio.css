@@ -374,6 +374,15 @@ p.copyright {
   text-justify: inter-word;
 }
 
+.post-more a{
+  color: #9a9a9a;
+  text-decoration: none;
+}
+
+.post-more a:hover {
+  text-decoration: underline;
+}
+
 .post-content {
   margin-top: 2rem;
   text-align: justify;
