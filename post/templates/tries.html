@@ -6,6 +6,123 @@
 </div>
 <img class="project-details-image" src="/static/img/tries.png"></img>
 <div class="project-container">
-
+  <h2 class="project-section project-intro">Information about the Trie, TST and Radix Tree comparison</h2>
+  <p><strong>Trie, Ternary Search Tree (TST) and Radix Tree</strong> is aimed to compare the performance of these three data structures. The three data structure are an implementation of the <strong>abstract data type dictionary</strong>, but they are enhanced with an extra method called "keys". That method returns the keys with that share a provided prefix. This can useful to use it in  tasks such as autocomplete searches.</p>
+  <p>The study performed was using <strong>std::map</strong> and <strong>std::unordered_map</strong> as baseline for the performance. TALK HERE ABOUT Sedgewick and Skiena LKJSFNVBLKJSFBN</P>
+  <h2 class="project-section">Operations supported</h2>
+  <p>The opeartions supported by <strong>Trie, Ternary Search Tree (TST) and Radix Tree</strong> are:</p>
+  <table>
+  <thead>
+  <tr>
+  <th>Operation</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>clear</td>
+  <td>Removes all the content of the data structure</td>
+  </tr>
+  <tr>
+  <td>find</td>
+  <td>Returns the value stored in the data structure for a specific key provided</td>
+  </tr>
+  <tr>
+  <td>insert</td>
+  <td>Adds a new pair of key and value to the data structure</td>
+  </tr>
+  <tr>
+  <td>size</td>
+  <td>Returns the amount of elements stored in the data structure</td>
+  </tr>
+  <tr>
+  <td>show</td>
+  <td>Prints the content of the data structure in the <a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)">dot</a> format</td>
+  </tr>
+  <tr>
+  <td>erase</td>
+  <td>Removes the value stored in the data structure for a specific key provided</td>
+  </tr>
+  <tr>
+  <td>contains</td>
+  <td>Returns true if there is a value associated to the key provided</td>
+  </tr>
+  <tr>
+  <td>keys</td>
+  <td>Returns a std::vector with all the keys in the data structure that have the provided prefix. If no prefix is provided returns a std::vector with all the keys in the data structure.</td>
+  </tr>
+  <tr>
+  <td>lcp</td>
+  <td>Returns the longest common prefix of all keys stored in the data structure.</td>
+  </tr>
+  </tbody>
+  </table>
+  <h2 class="project-section">Scenarios tested</h2>
+  <p>
+    Several test scenarios have been have developed to compare the performance of these five data structures.
+  </p>
+  <ul>
+<li>Memory
+<ul>
+<li>Random values</li>
+<li>Dictionaries</li>
+</ul>
+</li>
+<li>Insert
+<ul>
+<li>Random values</li>
+</ul>
+</li>
+<li>Remove
+<ul>
+<li>Random values
+<ul>
+<li>Found</li>
+<li>Not found</li>
+</ul>
+</li>
+<li>Dictionaries
+<ul>
+<li>Found</li>
+<li>Not found</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Seach
+<ul>
+<li>Random values
+<ul>
+<li>Found</li>
+<li>Not found</li>
+</ul>
+</li>
+<li>Dictionaries
+<ul>
+<li>Found</li>
+<li>Not found</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Get Keys
+<ul>
+<li>Random values</li>
+<li>Dictionaries</li>
+</ul>
+</li>
+<li>Get Keys with Prefix
+<ul>
+<li>Random values</li>
+<li>Dictionaries</li>
+</ul>
+</li>
+<li>Longest Common Path
+<ul>
+<li>Random values</li>
+<li>Dictionaries</li>
+</ul>
+</li>
+</ul>
 </div>
 {% endblock %}
