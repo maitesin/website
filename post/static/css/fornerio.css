@@ -505,3 +505,7 @@ p.copyright {
    margin-left: auto;
    margin-right: auto;
  }
+
+ .project-container p {
+   text-align: justify;
+ }
