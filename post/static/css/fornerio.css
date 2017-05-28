@@ -417,14 +417,21 @@ p.copyright {
   padding-bottom: 2em;
   border-top: 1px solid #9a9a9a;
   border-bottom: 1px solid #9a9a9a;
+  display: inline-block;
 }
 
 .previous-post {
   float: left;
+  width: 40%;
+}
+
+.previous-next-post-gap {
+  width: 20%;
 }
 
 .next-post {
   float: right;
+  width: 40%;
 }
 
 .share-button {
