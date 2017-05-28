@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, handler404
 
 from . import views
 
@@ -20,3 +20,5 @@ urlpatterns = [
     url(r'^rss/?$', views.LatestPostFeed(), name="RSS"),
     url(r'^atom/$', views.LatestPostAtom(), name="Atom"),
 ]
+
+handler404 = 'post.views.handler404'

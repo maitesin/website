@@ -4,6 +4,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed
+from django.template import RequestContext
 
 from .models import Tag, Post, Category, PostTag
 
@@ -128,3 +129,9 @@ def resume(request):
 def about(request):
     context = {}
     return render(request, 'about.html', context)
+
+def handler404(request):
+    response = render_to_response('404.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
