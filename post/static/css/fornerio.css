@@ -422,16 +422,16 @@ p.copyright {
 
 .previous-post {
   float: left;
-  width: 40%;
+  width: 45%;
 }
 
 .previous-next-post-gap {
-  width: 20%;
+  width: 10%;
 }
 
 .next-post {
   float: right;
-  width: 40%;
+  width: 45%;
 }
 
 .share-button {
