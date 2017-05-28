@@ -138,7 +138,7 @@ class Post(models.Model):
         return self.__get_next().get_url()
 
     def get_next_title(self):
-        return self.__get_next().get_title()
+        return self.__get_next().title
 
     def __get_previous(self):
         posts = Post.objects.order_by('-pub_date').filter(pub_date__lt=self.pub_date).filter(draft=False)
@@ -148,7 +148,7 @@ class Post(models.Model):
         return self.__get_previous().get_url()
 
     def get_previous_title(self):
-        return self.__get_previous().get_title()
+        return self.__get_previous().title
 
 class PostTag(models.Model):
     class Meta:

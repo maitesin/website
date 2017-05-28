@@ -221,7 +221,7 @@ class PostTests(TestCase):
     def test_previous_post_middle(self):
         latest = Post.get_latest_posts()
         pubdate = latest[2].pub_date
-        self.assertEquals(latest[1].get_previous_title(), latest[2].get_title())
+        self.assertEquals(latest[1].get_previous_title(), latest[2].title)
         self.assertEquals(latest[1].get_previous_url(), "/%s/%02d/%02d/Post_9" % (pubdate.year, pubdate.month, pubdate.day))
 
     def test_has_next_post_middle(self):
@@ -231,7 +231,7 @@ class PostTests(TestCase):
     def test_next_post_middle(self):
         latest = Post.get_latest_posts()
         pubdate = latest[0].pub_date
-        self.assertEquals(latest[1].get_next_title(), latest[0].get_title())
+        self.assertEquals(latest[1].get_next_title(), latest[0].title)
         self.assertEquals(latest[1].get_next_url(), "/%s/%02d/%02d/Post_11" % (pubdate.year, pubdate.month, pubdate.day))
 
     def test_has_previous_post_beginning(self):
@@ -245,7 +245,7 @@ class PostTests(TestCase):
     def test_next_post_beginning(self):
         latest = Post.get_latest_posts()
         pubdate = latest[len(latest)-2].pub_date
-        self.assertEquals(latest[len(latest)-1].get_next_title(), latest[len(latest)-2].get_title())
+        self.assertEquals(latest[len(latest)-1].get_next_title(), latest[len(latest)-2].title)
         self.assertEquals(latest[len(latest)-1].get_next_url(), "/%s/%02d/%02d/Post_2" % (pubdate.year, pubdate.month, pubdate.day))
 
     def test_has_previous_post_ending(self):
@@ -255,7 +255,7 @@ class PostTests(TestCase):
     def test_previous_post_ending(self):
         latest = Post.get_latest_posts()
         pubdate = latest[1].pub_date
-        self.assertEquals(latest[0].get_previous_title(), latest[1].get_title())
+        self.assertEquals(latest[0].get_previous_title(), latest[1].title)
         self.assertEquals(latest[0].get_previous_url(), "/%s/%02d/%02d/Post_10" % (pubdate.year, pubdate.month, pubdate.day))
 
     def test_has_next_post_ending(self):
