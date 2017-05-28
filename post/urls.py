@@ -22,3 +22,4 @@ urlpatterns = [
 ]
 
 handler404 = 'post.views.handler404'
+handler500 = 'post.views.handler500'
