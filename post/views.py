@@ -119,8 +119,8 @@ def tries(request):
 def acc(request):
     return render(request, 'acc.html', {})
 
-def personal(request):
-    return render(request, 'personal.html', {})
+def website(request):
+    return render(request, 'website.html', {})
 
 def resume(request):
     context = {}
