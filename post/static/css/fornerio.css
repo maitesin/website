@@ -423,6 +423,7 @@ p.copyright {
 .previous-post {
   float: left;
   width: 45%;
+  display: inline-flex;
 }
 
 .previous-next-post-gap {
@@ -432,6 +433,7 @@ p.copyright {
 .next-post {
   float: right;
   width: 45%;
+  display: inline-flex;
 }
 
 .share-button {
