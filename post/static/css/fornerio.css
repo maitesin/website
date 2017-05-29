@@ -423,9 +423,14 @@ p.copyright {
 
 .previous-post {
   float: left;
-  text-align: left;
   width: 45%;
   display: inline-flex;
+}
+
+.previous-post-title {
+}
+
+.previous-post-arrow {
 }
 
 .previous-next-post-gap {
@@ -434,9 +439,14 @@ p.copyright {
 
 .next-post {
   float: right;
-  text-align: right;
   width: 45%;
   display: inline-flex;
+}
+
+.next-post-title {
+}
+
+.next-post-arrow {
 }
 
 .share-button {
