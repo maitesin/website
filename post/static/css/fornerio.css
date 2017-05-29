@@ -417,11 +417,13 @@ p.copyright {
   padding-bottom: 2em;
   border-top: 1px solid #9a9a9a;
   border-bottom: 1px solid #9a9a9a;
+  width: 100%;
   display: inline-block;
 }
 
 .previous-post {
   float: left;
+  text-align: left;
   width: 45%;
   display: inline-flex;
 }
@@ -432,6 +434,7 @@ p.copyright {
 
 .next-post {
   float: right;
+  text-align: right;
   width: 45%;
   display: inline-flex;
 }

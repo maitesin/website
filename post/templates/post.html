@@ -15,15 +15,15 @@
   <div class="previous-next-post">
     {% if object.has_previous %}
       <div class="previous-post">
-        <div><a href="{{ object.get_previous_url }}"><i class="fa fa-chevron-left"></i>&nbsp;</a></div>
-        <div><a href="{{ object.get_previous_url }}">{{ object.get_previous_title }}</a></div>
+        <div class="previous-post-arrow"><a href="{{ object.get_previous_url }}"><i class="fa fa-chevron-left"></i>&nbsp;</a></div>
+        <div class="previous-post-title"><a href="{{ object.get_previous_url }}">{{ object.get_previous_title }}</a></div>
       </div>
     {% endif %}
-    <div class="previous-next-post-gap"></div>
+    <div class="previous-next-post-gap">&nbsp;</div>
     {% if object.has_next %}
       <div class="next-post">
-        <div><a href="{{ object.get_next_url }}">{{ object.get_next_title }}</a></div>
-        <div><a href="{{ object.get_next_url }}">&nbsp;<i class="fa fa-chevron-right"></i></a></div>
+        <div class="next-post-title"><a href="{{ object.get_next_url }}">{{ object.get_next_title }}</a></div>
+        <div class="next-post-arrow"><a href="{{ object.get_next_url }}">&nbsp;<i class="fa fa-chevron-right"></i></a></div>
       </div>
     {% endif %}
   </div>
