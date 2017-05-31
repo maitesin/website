@@ -1,5 +1,33 @@
 {% extends 'layout.html' %}
 
 {% block main %}
-  <h1>My resume, so cool</h1>
+  <div class="projects-title">
+    <h1>Resume</h1>
+  </div>
+  <div class="resume-description"></div>
+  <fieldset>
+    <legend>Experience</legend>
+    <div class="resume-experience">
+      <details>
+        <summary>2016 - Present: Software Engineer at VCA Technology</summary>
+        <p><strong>Network library</strong>: Allows the user to interact with Boost ASIO through the <i>std::stream</i> interface.</p>
+        <p><strong>Tools</strong>: Improve the toolchain used internally to allow the usage of <i>clang-tidy</i> for the linting of our code. Another tool allows to switch between several versions of the toolchain without having to change the environment.</p>
+        <p><strong>Backend development</strong>: Several activities regarding the extension and implementation of new features in the backend of the product such as <i>Authentication</i> and <i>GStreamer sinks<i/>.</p>
+      </details>
+      <details>
+        <summary>2015 - 2016: Software Developer at Programming Research</summary>
+        <p><strong>Static analysis of code</strong>: Checks if the code has some patterns that have an <i>undefined behaviour</i>, <i>unspecified in the Standard</i>, and/or <i>implementation-defined</i>.</p>
+        <p><strong>Dataflow analysis of code</strong>: Checks the complexity of methods, pointer problems, memory handling, etc.</p>
+        <p>Took over two projects to refactor, maintain and add new features.</p>
+      </details>
+      <details>
+        <summary>2013 - 2015: Software Engineer at European Bioinformatics Institute</summary>
+        <p></p>
+      </details>
+      <details>
+        <summary>2013 - Present: Open Source</summary>
+        <p></p>
+      </details>
+    </div>
+  </fieldset>
 {% endblock %}
