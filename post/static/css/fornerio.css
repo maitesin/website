@@ -535,3 +535,9 @@ p.copyright {
  .project-container p {
    text-align: justify;
  }
+
+ .resume-programming-item label {
+   display:block;
+   float:left;
+   width:100px;
+ }
