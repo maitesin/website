@@ -5,9 +5,9 @@
     <h1>Resume</h1>
   </div>
   <div class="resume-description"></div>
-  <fieldset>
+  <fieldset class="resume-fieldset fieldset-experience">
     <legend>Experience</legend>
-    <div class="resume-experience">
+    <div class="resume-section resume-experience">
       <details>
         <summary>2016 - Present: Software Engineer at VCA Technology</summary>
         <p><strong>Network library</strong>: Allows the user to interact with Boost ASIO through the <i>std::stream</i> interface.</p>
@@ -22,12 +22,39 @@
       </details>
       <details>
         <summary>2013 - 2015: Software Engineer at European Bioinformatics Institute</summary>
-        <p></p>
+        <p><strong>RESTful service</strong>: Allows users to query for information about complexes in the database.</p>
+	<p><strong>Cluster algorithm</strong>: Developed a new algorithm to cluster biological information from proteins.</p>
       </details>
       <details>
         <summary>2013 - Present: Open Source</summary>
-        <p></p>
+        <p><strong><a href="https://github.com/maitesin/tries">Prefix Tree Comparison</a></strong>: Compare performance for different <strong>Trie</strong>, <strong>Ternary Search Tree</strong> and <strong>Radix Tree</strong>.<p>
+	<p><strong><a href="https://github.com/maitesin/acc">ARM C Compiler (ACC)</a></strong>: I am creating a <strong>self-hosting compiler</strong> for <strong>C</strong> in the <strong>ARM</strong> architecture.</p>
       </details>
+    </div>
+  </fieldset>
+  <fieldset class="resume-fieldset fieldset-courses">
+    <legend>Courses</legend>
+    <div class="resume-section resume-courses">
+      <ul class="resume-list">
+	<li class="resume-list-item">April 2016 - <strong>LFD331: Developing Linux Device Drivers</strong>; Linux Foundation</li>
+	<li class="resume-list-item">March 2016 - <strong>LFD320: Linux Kernel Internals and Debugging</strong>; Linux Foundation</li>
+	<li class="resume-list-item">August 2015 - <strong>Agile for developers</strong>; Accelebrate</li>
+	<li class="resume-list-item">November 2014 - <strong>Algorithms, Part II</strong>; Coursera, Princeton University</li>
+	<li class="resume-list-item">September 2014 - <strong>Algorithms, Part I</strong>; Coursera, Princeton University</li>
+      </ul>
+    </div>
+  </fieldset>
+  <fieldset class="resume-fieldset fieldset-programming">
+    <legend>Programming Languages</legend>
+    <div class="resume-section resume-programming">
+      <ul class="resume-list">
+	<li class="resume-list-item resume-programming-item"><strong>C++(11, 14, 17)</strong>: <progress value="90" max="100"></progress></li>
+	<li class="resume-list-item resume-programming-item"><strong>C</strong>: <progress value="80" max="100"></progress></li>
+	<li class="resume-list-item resume-programming-item"><strong>Python(2, 3)</strong>: <progress value="80" max="100"></progress></li>
+	<li class="resume-list-item resume-programming-item"><strong>Bash</strong>: <progress value="75" max="100"></progress></li>
+	<li class="resume-list-item resume-programming-item"><strong>Go</strong>: <progress value="50" max="100"></progress></li>
+	<li class="resume-list-item resume-programming-item"><strong>Rust</strong>: <progress value="50" max="100"></progress></li>
+      </ul>
     </div>
   </fieldset>
 {% endblock %}
