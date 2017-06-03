@@ -107,10 +107,7 @@ class LatestPostAtom(LatestPostFeed):
 def projects(request):
     context = {'projects' : [{'title':'Trie, TST & Radix Tree', 'url':'tries', 'img':'tries.png'},
                              {'title':'ACC (ARM C Compiler)', 'url':'acc', 'img':'acc.png'},
-                             {'title':'Personal website', 'url':'website', 'img':'website.png'},
-                             {'title':'Placeholder 4', 'url':'place4', 'img':'place4.png'},
-                             {'title':'Placeholder 5', 'url':'place5', 'img':'place5.png'},
-                             {'title':'Placeholder 6', 'url':'place6', 'img':'place6.png'}]}
+                             {'title':'Personal website', 'url':'website', 'img':'website.png'}]}
     return render(request, 'projects.html', context)
 
 def tries(request):
