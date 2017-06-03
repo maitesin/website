@@ -126,10 +126,6 @@ def resume(request):
     context = {}
     return render(request, 'resume.html', context)
 
-def about(request):
-    context = {}
-    return render(request, 'about.html', context)
-
 def handler404(request):
     response = render_to_response('404.html', {},
                                   context_instance=RequestContext(request))
