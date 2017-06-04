@@ -8,7 +8,9 @@
 <div class="project-container">
   <h2 class="project-section project-intro">Information about the Trie, TST and Radix Tree comparison</h2>
   <p><strong>Trie, Ternary Search Tree (TST) and Radix Tree</strong> is aimed to compare the performance of these three data structures. The three data structure are an implementation of the <strong>abstract data type dictionary</strong>, but they are enhanced with an extra method called "keys". That method returns the keys with that share a provided prefix. This can useful to use it in  tasks such as autocomplete searches.</p>
-  <p>The study performed was using <strong>std::map</strong> and <strong>std::unordered_map</strong> as baseline for the performance. TALK HERE ABOUT Sedgewick and Skiena LKJSFNVBLKJSFBN</P>
+  <p>The study performed was using <strong>std::map</strong> and <strong>std::unordered_map</strong> as baseline for the performance.</p>
+  <p>Robert Sedgewick claims that a <strong>Ternary Search Tree (TST)</strong> is a better solution than a <strong>Radix Tree</strong> since it does not waste space if the amount of data is not dense enough. and Skiena LKJSFNVBLKJSFBN</P>
+  <p>However, Stecen S. Skiena holds that a <strong>Suffix Tree</strong> is the best approach, but since both data structures do not fulfill the same problems. I decided to use a <strong>Radix Tree</strong> regarding the close it gets to an <strong>Suffix Tree</strong> implementation.</p>
   <h2 class="project-section">Operations supported</h2>
   <p>The opeartions supported by <strong>Trie, Ternary Search Tree (TST) and Radix Tree</strong> are:</p>
   <table>
@@ -140,5 +142,7 @@ Ternary Search Tree is a type of trie (sometimes called a prefix tree) where nod
   Radix Tree (also radix trie or compact prefix tree) is a data structure that represents a space-optimized trie in which each node that is the only child is merged with its parent. The result is that the number of children of every internal node is at least the radix r of the radix trie, where r is a positive integer and a power x of 2, having x >= 1. Unlike in regular tries, edges can be labeled with sequences of elements as well as single elements. This makes radix trees much more efficient for small sets (especially if the strings are long) and for sets of strings that share long prefixes.
 </p>
 <img src="/static/img/tries/radix.png"></img>
+<h2 class="project-section">Results</h2>
+<p>All results can be seen <a href="/2016/02/26/Prefix_trees__Comparison_between_Trie__Ternary_Search_Tree_and_Radix_Tree">here</a></p>
 </div>
 {% endblock %}
