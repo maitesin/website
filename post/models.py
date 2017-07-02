@@ -96,7 +96,8 @@ class Post(models.Model):
 
     @staticmethod
     def get_posts_from_year_month_day_title(year, month, day, title):
-        for post in Post.get_posts_from_year_month_day(year, month, day).filter(pub_date__day=day):
+        # Cannot use the previous method because it filters out the draft posts
+        for post in Post.objects.order_by('-pub_date').filter(pub_date__year=year).filter(pub_date__month=month).filter(pub_date__day=day):
             if post.get_title() == title:
                 return post
         raise Http404("Post does not exist")
