@@ -107,7 +107,8 @@ class LatestPostAtom(LatestPostFeed):
 def projects(request):
     context = {'projects' : [{'title':'Trie, TST & Radix Tree', 'url':'tries', 'img':'tries.png'},
                              {'title':'ACC (ARM C Compiler)', 'url':'acc', 'img':'acc.png'},
-                             {'title':'Personal website', 'url':'website', 'img':'website.png'}]}
+                             {'title':'Personal website', 'url':'website', 'img':'website.png'},
+                             {'title':'Resume Application', 'url':'resume', 'img':'resume.png'}]}
     return render(request, 'projects.html', context)
 
 def tries(request):
@@ -122,6 +123,10 @@ def website(request):
 def resume(request):
     context = {}
     return render(request, 'resume.html', context)
+
+def resumecli(request):
+    context = {}
+    return render(request, 'resumecli.html', context)
 
 def handler404(request):
     response = render_to_response('404.html', {},

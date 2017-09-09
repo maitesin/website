@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^projects/tries?$', views.tries, name="Tries"),
     url(r'^projects/acc?$', views.acc, name="ACC"),
     url(r'^projects/website?$', views.website, name="Website"),
+    url(r'^projects/resume?$', views.resumecli, name="Resume CLI"),
     url(r'^resume/?$', views.resume, name="Resume"),
     url(r'^rss/?$', views.LatestPostFeed(), name="RSS"),
     url(r'^atom/$', views.LatestPostAtom(), name="Atom"),
