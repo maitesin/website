@@ -6,50 +6,13 @@
   </div>
   <img class="project-details-image" src="/static/img/resume.png"></img>
   <div class="project-container">
-    <h2 class="project-section project-intro">Information about the ARM C Compiler (ACC)</h2>
-    <p><strong>ACC</strong> is a pet project with the purpose of improving my knowledge of three topics. The C language, compilers and the ARM assembly. I think this is a good exercise to go deep into both topics.</p>
-    <p>The <strong>ACC</strong> is a <strong>LALR(1) parser</strong>, that means it is a <a href="https://en.wikipedia.org/wiki/LALR_parser"><strong>Look-Ahead Left-to-Right parser</strong></a>.</p>
-    <p>The current <strong>Grammar</strong> of the <strong>ACC</strong> is the following:</p>
-    <pre><code>S -&gt; int main "(" ")" "{" E "}"
-  E -&gt; return I;
-       | if "(" B ")" "{" E "}"
-       | if "(" B ")" "{" E "}" else "{" E "}"
-  I -&gt; [0-9]+
-  B -&gt; I &lt; I
-       | I &lt;= I
-       | I == I
-       | I &gt;= I
-       | I &gt; I
-       | ! B
-       | "(" B ")"
-     </code></pre>
-     <h2 class="project-section project-roadmap">Future work for the project</h2>
-     <form>
-       <ol>
-         <li><input type="checkbox" onclick="return false;" checked>Main function</li>
-         <li><input type="checkbox" onclick="return false;" checked>Return statement</li>
-         <li><input type="checkbox" onclick="return false;" checked>Int values</li>
-         <li><input type="checkbox" onclick="return false;" checked>Boolean operations</li>
-         <li><input type="checkbox" onclick="return false;" checked>Conditionals</li>
-         <li><input type="checkbox" onclick="return false;">Variable (int)</li>
-         <li><input type="checkbox" onclick="return false;">Addition and substraction operations</li>
-         <li><input type="checkbox" onclick="return false;">Multiplication and division operations</li>
-         <li><input type="checkbox" onclick="return false;">Comments</li>
-         <li><input type="checkbox" onclick="return false;">Functions</li>
-         <li><input type="checkbox" onclick="return false;">String</li>
-         <li><input type="checkbox" onclick="return false;">Array</li>
-         <li><input type="checkbox" onclick="return false;">Pointer</li>
-         <li><input type="checkbox" onclick="return false;">Struct</li>
-         <li><input type="checkbox" onclick="return false;">Loop</li>
-         <li><input type="checkbox" onclick="return false;">Include</li>
-         <li>...</li>
-         <li><input type="checkbox" name="vehicle" value="Bike" onclick="return false;">Self-contained Compiler</li>
-       </ol>
-     </form>
-     <h2 class="project-section project-example">Example of the usage of the <strong>ACC</strong></h2>
-     <p>C code:</p>
-     <script src="https://gist.github.com/maitesin/61c3ba1b3e045b491c59d03fbd74a934.js"></script>
-     <p>Assembly generated:</p>
-     <script src="https://gist.github.com/maitesin/c5fe29bd395c286414b4877f86b7aa9d.js"></script>
-   </div>
+    <h2 class="project-section project-intro">Information about the Rust application Resume</h2>
+    <p>This resume is an <strong>interactive application</strong> written in <strong>Rust</strong> and it can be found <a href="https://github.com/maitesin/rust-cv/">https://github.com/maitesin/rust-cv/</a>.</p>
+    <p>The idea for this project was inspired by <a href="https://github.com/soulshake/cv.soulshake.net">S0ulshake's CV</a>, however, I prefered to used other technologies, since I do not know JavaScript.</p>
+    <p>The <strong>Rust</strong> library I used for creating the UI is <a href="https://github.com/fdehau/tui-rs">tui</a>.</p>
+    <p>I have packaged the application inside a <strong>Docker</strong> image, so people can run it on their computers with the following command.</p>
+    <pre><code>docker run -it --rm maitesin/resume</code></pre>
+    <p>You should get something similar to:</p>
+    <img src="https://raw.githubusercontent.com/maitesin/rust-cv/master/cv.gif"></img>
+  </div>
 {% endblock %}
