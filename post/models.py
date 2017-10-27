@@ -80,7 +80,9 @@ class Post(models.Model):
     def get_latest_posts_with_tag(tag_name):
         tag = Tag.get_tag_with_title(tag_name)
         post_tag = PostTag.objects.filter(tag=tag)
-        return [elem.post for elem in post_tag]
+        posts = [elem.post for elem in post_tag]
+        posts.reverse()
+        return posts
 
     @staticmethod
     def get_posts_from_year(year):
