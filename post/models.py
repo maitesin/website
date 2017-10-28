@@ -112,11 +112,17 @@ class Post(models.Model):
         return reverse('Post', args=["%04d" % time.year, "%02d" % time.month, "%02d" % time.day, self.get_title()])
 
     def get_content(self):
-        return markdown(self.content, output_format="html5", extensions=['markdown.extensions.tables'])
+        return markdown(self.content, output_format="html5", extensions=['markdown.extensions.tables', 'markdown.extensions.toc'])
+
+    def get_content_without_toc(self):
+        with_toc = self.get_content()
+        toc = re.compile('<h3 id="table-of-contents">.*?<h3 id="introduction">Introduction</h3>', re.DOTALL)
+        without_toc = re.sub(toc, '', with_toc)
+        return without_toc
 
     def get_abstract(self):
         clean = re.compile('<.*?>')
-        content = re.sub(clean, '', self.get_content())
+        content = re.sub(clean, '', self.get_content_without_toc())
         pos = content.find(' ', 500)
         if pos != -1:
             return content[:pos] + '...'
