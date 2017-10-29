@@ -112,7 +112,7 @@ class Post(models.Model):
         return reverse('Post', args=["%04d" % time.year, "%02d" % time.month, "%02d" % time.day, self.get_title()])
 
     def get_content(self):
-        return markdown(self.content, output_format="html5", extensions=['markdown.extensions.tables', 'markdown.extensions.toc'])
+        return markdown(self.content, output_format="html5", extensions=['markdown.extensions.tables', 'markdown.extensions.toc', 'markdown.extensions.fenced_code', 'markdown.extensions.codehilite'])
 
     def get_content_without_toc(self):
         with_toc = self.get_content()
