@@ -500,3 +500,10 @@ p.copyright {
    float:left;
    width:125px;
  }
+
+ .ps-icon {
+   display: inline-block;
+   text-align: center;
+   width: 1.7em;
+   margin: 0;
+ }
