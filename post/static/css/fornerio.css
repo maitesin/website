@@ -500,6 +500,9 @@ p.copyright {
    float:left;
    width:125px;
  }
+ .resume-list {
+   margin-bottom: 0px;
+ }
 
  .ps-icon {
    display: inline-block;
