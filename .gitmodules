@@ -1,0 +1,3 @@
+[submodule "themes/simple-hugo"]
+	path = themes/simple-hugo
+	url = https://gitlab.com/maitesin/simple-hugo.git
