@@ -2,3 +2,21 @@ baseURL = "http://dev.oscarforner.com/"
 languageCode = "en-us"
 title = "Oscar Forner"
 theme = "simple-hugo"
+
+# Menu definition
+[menu]
+
+  [[menu.main]]
+    weight = 1
+    URL = "about"
+    Name = "About-me"
+  [[menu.main]]
+    weight = 2
+    URL = "projects"
+    Name = "Projects"
+
+# Site parameters
+[params]
+  dateFormat = "31/03/2019"
+
+
