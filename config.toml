@@ -17,6 +17,6 @@ theme = "simple-hugo"
 
 # Site parameters
 [params]
-  dateFormat = "31/03/2019"
+  dateFormat = "2006-01-02"
 
 
