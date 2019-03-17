@@ -1,10 +1,11 @@
 +++
-title = "Unit test with Google Test for C++"
-date = "2015-06-24T13:50:46+02:00"
+title = "rr debugger, record once, replay tens of times"
+date = "2016-01-15T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
+tags = ["GDB", "rr", "Debugger", "C", "C++"]
 categories = ["Development"]
 +++
+
 ### Table of Contents
 [TOC]
 

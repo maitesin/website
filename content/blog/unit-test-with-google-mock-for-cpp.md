@@ -1,8 +1,8 @@
 +++
-title = "Unit test with Google Test for C++"
-date = "2015-06-24T13:50:46+02:00"
+title = "Unit test with Google Mock for C++"
+date = "2016-01-22T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
+tags = ["Mock", "Google Mock", "Unit Test", "Google Test", "C++"]
 categories = ["Development"]
 +++
 

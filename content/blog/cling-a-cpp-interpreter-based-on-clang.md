@@ -1,8 +1,8 @@
 +++
-title = "Unit test with Google Test for C++"
-date = "2015-06-24T13:50:46+02:00"
+title = "Cling a C++ interpreter based on Clang"
+date = "2016-01-08T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
+tags = ["Clang", "Interpreter", "C++"]
 categories = ["Development"]
 +++
 

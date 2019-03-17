@@ -1,9 +1,9 @@
 +++
-title = "Unit test with Google Test for C++"
-date = "2015-06-24T13:50:46+02:00"
+title = "Using LD_PRELOAD as defense from unsecure library calls"
+date = "2016-01-01T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
-categories = ["Development"]
+tags = ["Linux", "Security"]
+categories = ["OS"]
 +++
 
 ### Table of Contents
