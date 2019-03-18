@@ -1,5 +1,5 @@
 +++
-title = "Unit test with Google Test for C++"
+title = "Unity: unit test for C"
 date = "2015-06-24T13:50:46+02:00"
 author = "Oscar Forner"
 tags = [""]

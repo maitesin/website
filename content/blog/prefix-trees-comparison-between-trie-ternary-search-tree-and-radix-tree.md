@@ -1,5 +1,5 @@
 +++
-title = "Unit test with Google Test for C++"
+title = "Prefix tree comparison between: Trie, Ternary Search Tree, and Radix Tree"
 date = "2015-06-24T13:50:46+02:00"
 author = "Oscar Forner"
 tags = [""]

@@ -1,5 +1,5 @@
 +++
-title = "Unit test with Google Test for C++"
+title = "Lambda expression comparison between C++11, C++14 and C++17"
 date = "2015-06-24T13:50:46+02:00"
 author = "Oscar Forner"
 tags = [""]
