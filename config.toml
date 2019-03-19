@@ -6,6 +6,7 @@ theme = "simple-hugo"
 # Menu definition
 [menu]
 
+  # Top (main) menu
   [[menu.main]]
     weight = 1
     URL = "about"
@@ -14,6 +15,16 @@ theme = "simple-hugo"
     weight = 2
     URL = "projects"
     Name = "Projects"
+  [[menu.main]]
+    weight = 3
+    URL = "curriculum"
+    Name = "CV"
+
+  # Bottom (footer) menu
+  [[footer.main]]
+    weight = 1
+    URL = "github.com"
+    icon = "fa-github"
 
 # Site parameters
 [params]
