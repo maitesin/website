@@ -6,9 +6,6 @@ tags = ["Mock", "Google Mock", "Unit Test", "Google Test", "C++"]
 categories = ["Development"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
 This post is a continuation from a previous post called [Unit test with Google Test for C++](http://maitesin.github.io//GoogleTest-C++/), but in this post we are going to use **Google Mock**, that extends the functionality of **Google Test**.
 
