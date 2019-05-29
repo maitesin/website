@@ -1,15 +1,13 @@
 +++
 title = "Software development using BASH"
-date = "2015-06-24T13:50:46+02:00"
+date = "2018-02-24T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
+tags = ["Bash", "Static Analysis", "Unit Test"]
 categories = ["Development"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 As for any other language I develop with, **I like to make use of tools and utilities to
 help me spot problems as soon as possible.**
 
@@ -22,11 +20,12 @@ For that reason I like to have three things in all my projects:
 When developing in `Bash` there is no difference in this regard. Some people would say
 that `Bash` is *just* for scripting. I mostly agree with that statement,
 however, **sometimes you have to write a lot of `Bash` and for these cases I want
-to be able to develop it in the same way I do for other languages.** 
+to be able to develop it in the same way I do for other languages.**
 
 As always, **all the code used in this post is available in this [repo](https://github.com/maitesin/blog/tree/master/bash_2018_02_24).**
 
 ### Formatter
+
 A formatter's duty is to keep the code style the same across a whole project. For
 `Bash` I like to use [shfmt](https://github.com/mvdan/sh) as the formatter. It
 is a `Go` project and it can be installed running
@@ -39,6 +38,7 @@ The most basic usage for `shfmt` is to format a file. By default it targets
 `bash`, but to target just `POSIX` compatible shells the flag `-p` can be used.
 
 An example file before formatting:
+
 ```bash
 #!/bin/bash
 
@@ -61,6 +61,7 @@ done
 ```
 
 The previous file formatted:
+
 ```bash
 $ shfmt mess.sh 
 #!/bin/bash
@@ -82,6 +83,7 @@ are for **binary operations like `&&` and `|` may start a line** and **switch
 cases will be indented**, respectively. 
 
 An example script with binary operations and a switch case:
+
 ```bash
 #!/bin/bash
 
@@ -105,6 +107,7 @@ esac
 ```
 
 `shfmt` run with default arguments:
+
 ```bash
 $ shfmt binary_ops_and_switch_cases.sh
 #!/bin/bash
@@ -129,6 +132,7 @@ esac
 ```
 
 `shfmt` run with `-bn` and `-ci` flags:
+
 ```bash
 $ shfmt -bn -ci binary_ops_and_switch_cases.sh
 #!/bin/bash
@@ -153,9 +157,11 @@ esac
 ```
 
 ### Linter (Static Analysis)
+
 Any good linter's job is to point out all the errors that can found in your code. My favourite `Bash` linter is `ShellCheck`. It can be used from their website [https://www.shellcheck.net/](https://www.shellcheck.net/) or installing their command line application in your system.
 
 Can you spot all the errors in the following snippet?
+
 ```bash
 #!/bin/sh
 
@@ -166,6 +172,7 @@ done
 ```
 
 I am sure you have found several errors, but let's have a look at the output of `ShellCheck`
+
 ```bash
 $ shellcheck errors.sh 
 
@@ -192,9 +199,11 @@ Finding errors like these by just looking at the code is hard. So, let a compute
 it for you.
 
 ### Unit Test Framework
+
 Last but not least, a unit test framework for `Bash`. My choice is [Bats](https://github.com/sstephenson/bats).
 
 Given the following `functions.sh` file:
+
 ```bash
 sum() {
   if [ ${#} -ne 2 ]; then
@@ -209,6 +218,7 @@ sum() {
 ```
 
 Test file `test_functions.sh` for the previous file:
+
 ```bash
 #!/usr/bin/env bats
 
@@ -246,6 +256,7 @@ source functions.sh
 ```
 
 When that battery of test is run it outputs:
+
 ```bash
 $ ./test_functions.sh 
  ✓ The addition of 4 and 5 results in 9
@@ -257,6 +268,7 @@ $ ./test_functions.sh
 ```
 
 ### Conclusion
+
 `Bash` is a great scripting language, but **when you have to write more than a
 simple script to perform a task it is worth spending the time in using a formatter,
 a linter and unit test framework**. It may be even useful to use some

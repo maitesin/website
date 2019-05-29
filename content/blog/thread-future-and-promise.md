@@ -1,15 +1,13 @@
 +++
 title = "Thread, Future, and Promise"
-date = "2015-06-24T13:50:46+02:00"
+date = "2016-09-11T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
+tags = ["C++", "Concurrency", "Future", "Promise", "Thread"]
 categories = ["Development"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 In the C++11 standard several **concurrency** related classes were added. I will talk about **thread**, **future** and **promise**. Yes, I know there are others more useful than these three. However, **I think that it is really important to know well the bases to be able to use the more complex ones properly**.
 
 As usual, I am working from an Arch Linux computer. Therefore, I can install **Clang** and the tools from the repository (clang). For other distributions you can find the information in the documentation.
@@ -19,10 +17,13 @@ As always, **all the code used in this post is available in this [repo](https://
 The videos are made with **[asciinema](https://asciinema.org/)**, that means **you can copy from the video**.
 
 ### Thread
+
 **Thread** is the basic element of **concurrency** in the C++11 standard and they are intended to map one-to-one the operating system's threads.
 
 #### Simple
+
 In this example we use a **thread** to perform the task done by the function *accum_up_to*.
+
 ``` cpp
 #include <iostream>
 #include <functional>
@@ -48,16 +49,20 @@ int main()
   return 0;
 }
 ```
+
 Some parts to note in the code are the following:
 
 * The function that is executing the **thread** has a return type of void. Therefore, to get a result from that function it is required to provide a parameter to hold it.
 * Before being able to use the result stored in the parameters passed we have to make sure the thread has finished. To do so we use the *join* method of the **thread** to synchronize it.
 
 ##### Execution
+
 <script type="text/javascript" src="https://asciinema.org/a/0i676ob9b1btu4bosdno69d1d.js" id="asciicast-0i676ob9b1btu4bosdno69d1d" async></script>
 
 #### Two threads
+
 In this example we use two **threads** that perform the same task done by the function *accum_up_to*.
+
 ``` cpp
 #include <iostream>
 #include <functional>
@@ -86,16 +91,20 @@ int main()
   return 0;
 }
 ```
+
 As you can see above once the code is able to hold a thread, it is quite easy to make it hold two. However, **now we have two result variables and two calls to the method join**. As you can see it is not really easy to keep track once you have several **threads**.
 
 ##### Execution
 <script type="text/javascript" src="https://asciinema.org/a/4xl3gxqtgch0cx4cmjuym6kkq.js" id="asciicast-4xl3gxqtgch0cx4cmjuym6kkq" async></script>
 
 ### Future
+
 **Future** provides a way to access the result of asynchronous operations. You can imagine we use this to avoid the tedious part of getting the results from the **threads**.
 
 #### Simple
+
 In this example we use a **future** to perform the task done by the function *accum_up_to*.
+
 ``` cpp
 #include <iostream>
 #include <future>
@@ -118,6 +127,7 @@ int main()
   return 0;
 }
 ```
+
 Some changes compared to the **thread** version:
 
 * The function returns the value directly and it can be accesed by the method *get*. Moreover, the method *get* synchronizes the **future**.
@@ -127,7 +137,9 @@ Some changes compared to the **thread** version:
 <script type="text/javascript" src="https://asciinema.org/a/9tk2efdt4dbbf1wesc4oo3bue.js" id="asciicast-9tk2efdt4dbbf1wesc4oo3bue" async></script>
 
 #### Two futures
+
 In this example we use two **futures** that perform the same task done by the function *accum_up_to*.
+
 ``` cpp
 #include <iostream>
 #include <future>
@@ -152,6 +164,7 @@ int main()
   return 0;
 }
 ```
+
 **This time the execution of two tasks in separate threads is way cleaner**.
 
 ##### Execution
@@ -159,10 +172,13 @@ int main()
 
 
 ### Promise
+
 **Promise** is where a task can deposit its result to be retrieved through a **future**. In other words, **promise** is a way to have a single point of synchronization between two **threads** without being the end of one of them.
 
 #### Simple
+
 In this example we use a **promise** to send some information (from the user) into a **future** to perform the task done by the function *accum_up_to*.
+
 ``` cpp
 #include <iostream>
 #include <functional>
@@ -196,6 +212,7 @@ int main()
   return 0;
 }
 ```
+
 Some key points from the example:
 
 * The **promise** provides you a **future** and that **future** is used by the *accum_up_to* function.
@@ -206,6 +223,6 @@ Some key points from the example:
 <script type="text/javascript" src="https://asciinema.org/a/6so6sj02g30yns7rqmc5rr9zp.js" id="asciicast-6so6sj02g30yns7rqmc5rr9zp" async></script>
 In this execution something called **data race** is shown. That can be seen because the execution of the same program can generate different outputs (even if the result value is always the same).
 
-
 ### Conclusion
+
 These are **really** the basics of **concurrency** that are provided in the C++11 standard. I know there are other important topics from **concurrency** such as **mutex** or **condition variable** and I will talk about them in the future because they deserve their own post. Futhermore, I know I have not talked about **data races**, **dead locks** and all the other problems you face when doing **concurrency**, again if people are interested in this topic I can write about it too.

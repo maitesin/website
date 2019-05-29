@@ -1,23 +1,21 @@
 +++
-title = "Prefix tree comparison between: Trie, Ternary Search Tree, and Radix Tree"
-date = "2015-06-24T13:50:46+02:00"
+title = "Prefix Tree comparison"
+date = "2016-02-26T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
-categories = ["Development"]
+tags = ["C++", "Prefix Tree", "Trie", "Radix Tree", "Ternary Search Tree"]
+categories = ["Data Structures"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 In this post I talk about three data structures I implemented to compare their performance in different scenarios. The three data structures are **Trie**, **Ternary Search Tree** and **Radix Tree**.
 
 **All the code for the data structures as well as the tested scenarios are available in this [repo](https://github.com/maitesin/tries.git) in GitHub.**
 
 
-### Introduction
+### What is a Prefix Tree?
 
-What is a **prefix tree**? It is an **ordered** tree data structure that is used to store a dynamic set of elements where the key is a string. All the data structures that I implemented have the following methods:
+It is an **ordered** tree data structure that is used to store a dynamic set of elements where the key is a string. All the data structures that I implemented have the following methods:
 
 Operation|Description
 ---------|-----------

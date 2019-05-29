@@ -1,15 +1,13 @@
 +++
-title = "Linux Kernel Module example Rickroll prank"
-date = "2015-06-24T13:50:46+02:00"
+title = "Linux Kernel Rickroll Module"
+date = "2016-03-19T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
-categories = ["Development"]
+tags = ["C", "Kernel Module", "Linux"]
+categories = ["Operating Systems"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 **NOTE: The code used to replace the user's path with the one provided is BAD, never change user's pointer content unless he/she is expecting that to happen. Don't do that at home kids**
 
 I decided to explain the basics of a **Linux Kernel Module** with humor. I am not saying this is a good idea for April's fool, but it is quite close ;)
@@ -19,7 +17,9 @@ This module shares some ideas with the post about [LD_PRELOAD](http://maitesin.g
 As always, **all the code used in this post is available in this [repo](https://github.com/maitesin/blog/tree/master/rickroll_module_2016_03_19)**.
 
 ### Skeleton of a Linux Kernel Module
+
 The following code is the skeleton of a **Linux Kernel Module**
+
 ``` c
 #include<linux/module.h>
 #include<linux/init.h>
@@ -45,10 +45,13 @@ module_exit(my_exit);
 I think the code above is quite self-explanatory.
 
 ### What does this Module do?
+
 As said before, this module is aimed to replace the current open syscall by ours, that will detect if the file we are trying to open is an mp3 or a jpg file and it will substitute the files by the ones provided when the module is loaded.
 
 #### Code explained
+
 This could seem a bit overwhelming, but let's go through it.
+
 ``` c
 #include <linux/module.h>
 #include <linux/moduleparam.h>
@@ -116,6 +119,7 @@ module_exit(unset_rick);
 ```
 
 Parameters provided to the module are declared and registered as follows:
+
 ``` c
 static char *song = NULL;
 static char *pict = NULL;
@@ -128,6 +132,7 @@ MODULE_PARM_DESC(pict, "Path to the picture to open always.");
 ```
 
 Pointer to the old syscall and declaration of the new one. Moreover, we can see the method ***copy_to_user***, this is to copy information from the **Kernel Space** to **User Space**.
+
 ``` c
 static asmlinkage long (*old_open) (const char __user *filename, int flags, umode_t mode);
 
@@ -149,6 +154,7 @@ static asmlinkage long rick_open(const char __user *filename, int flags, umode_t
 ```
 
 The most outstanding part of the following piece of code is the use of ***kallsyms_lookup_name*** function. We will use it to locate the address of the ***sys_call_table***.
+
 ``` c
 static int __init set_rick(void)
 {
@@ -178,4 +184,5 @@ static void __exit unset_rick(void)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/efEZZZf_nTc" frameborder="0" allowfullscreen></iframe>
 
 ### Conclusion
+
 This is a great and funny example of the power of the **Linux Kernel Modules**. I will write about more advanced examples in the future. Moreover, I will keep on trying to get a patch accepted in the main tree :D

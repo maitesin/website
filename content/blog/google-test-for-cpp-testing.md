@@ -1,15 +1,13 @@
 +++
-title = "Unit test with Google Test for C++"
+title = "Google Test for C++ testing"
 date = "2015-12-23T13:50:46+02:00"
 author = "Oscar Forner"
-tags = ["Unit Test", "Google Test", "C++"]
+tags = ["C++", "Unit Test", "Google Test"]
 categories = ["Development"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 **Google Test** is one of the available Frameworks to create **unit test** for C++. In this example I will use **CMake**
 to configure the project and build. Furthermore, for the **dependency manager** I will use the new and shiny
 **[conan](https://www.conan.io/)**.
@@ -21,7 +19,9 @@ Because these technologies are widely use it in real projects.
 [repo](https://github.com/maitesin/blog/tree/master/google_test_2015_12_22) in GitHub.**
 
 ### Step 1 Install conan, configure project and gather dependencies
+
 First of all we need to have install conan from pip2 doing:
+
 ``` bash
 pip2 install conan
 ```
@@ -29,6 +29,7 @@ pip2 install conan
 Now with conan installed we do not have to worry about installing **Google Test** in our system.
 
 Next step will be preparing the **conanfile.txt** to gather de dependencies:
+
 ``` bash
 [requires]
 gtest/1.7.0@lasote/stable
@@ -42,10 +43,13 @@ cmake
 
 Once we have conan ready we only need to run it to download the dependency and configure them to have them ready for
 CMake:
+
 ``` bash
 conan install .
 ```
+
 This will output something similar to:
+
 ``` bash
 WARN: Migration: Updating settings.yml with new gcc versions
 Requirements
@@ -57,7 +61,9 @@ Generated conanbuildinfo.cmake
 ```
 
 ### Step 2 configuring CMake
+
 The configuration will be done in the **CMakeLists.txt** file:
+
 ``` cmake
 project(Google_test_example)
 cmake_minimum_required(VERSION 2.8)
@@ -71,9 +77,11 @@ TARGET_LINK_LIBRARIES(run_test ${CONAN_LIBS})
 ```
 
 ### Step 3 code and unit test
+
 The code will be held in the **src** folder. It will contain two files: *functions.h* and *test.cpp*.
 
 The function(s) we want to test will be in the header file *function.h*:
+
 ``` c
 int int_addition(int a, int b) {
             int c = a + b;
@@ -83,6 +91,7 @@ int int_addition(int a, int b) {
 
 
 The test(s) we want to run will be in the source file *test.cpp*:
+
 ``` cpp
 #include "gtest/gtest.h"
 #include "functions.h"
@@ -104,12 +113,15 @@ int main(int argc, char **argv) {
 ```
 
 ### Step 4 putting all together
+
 What is left to do is actually build the project and run the test. In order to do this we need to run:
+
 ``` bash
 cmake .
 ```
 
 This will output something similar to:
+
 ``` bash
 -- The C compiler identification is GNU 5.3.0
 -- The CXX compiler identification is GNU 5.3.0
@@ -132,11 +144,13 @@ This will output something similar to:
 
 There will be now a **Makefile** generated from **CMake** with everything ready to compile and link all the sources and
 dependencies together.
+
 ``` bash
 make
 ```
 
 This will output something like:
+
 ``` bash
 Scanning dependencies of target run_test
 [ 50%] Building CXX object CMakeFiles/run_test.dir/src/test.cpp.o
@@ -145,11 +159,13 @@ Scanning dependencies of target run_test
 ```
 
 This will generate an executable in the *bin* folder, and we will be able to run them with the command:
+
 ``` bash
 ./bin/run_test
 ```
 
 This will result with the following output:
+
 ``` bash
 [==========] Running 2 tests from 1 test case.
 [----------] Global test environment set-up.
@@ -166,6 +182,7 @@ This will result with the following output:
 ```
 
 ### More advanced example
+
 These are the basics of how to use **Google Test** to create **unit test** for your application. In the website of the project there are plenty of more advanced examples.
 
 Finally, if you want to see how is used **Google Test** in one of my own project you can have a look to the repository [tries](https://github.com/maitesin/tries). For each of the three data structures (Trie, TST and Radix Tree) there are two folders: **lib** (where the source code of the data structure is stored) and **gtest** (where the unit test are stored).

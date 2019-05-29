@@ -1,15 +1,13 @@
 +++
-title = "Cling a C++ interpreter based on Clang"
+title = "Cling a C++ interpreter"
 date = "2016-01-08T13:50:46+02:00"
 author = "Oscar Forner"
-tags = ["Clang", "Interpreter", "C++"]
+tags = ["C++", "Clang", "Interpreter"]
 categories = ["Development"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 **Cling is an interactive C++ interpreter**, built on top of Clang and LLVM compiler infrastructure. It can be found in
 [GitHub](https://github.com/vgvassilev/cling) (Note: Lately there has not been that much development on it).
 
@@ -21,6 +19,7 @@ As always, **all the code used in this post is available in this [repo](https://
 The videos are made with **[asciinema](https://asciinema.org/)**, that means **you can copy from the video**.
 
 ### The basics of Cling
+
 In this section I will show the basic commands we can run on cling besides C/C++ code.
 
 | Command | Explanation |
@@ -31,10 +30,13 @@ In this section I will show the basic commands we can run on cling besides C/C++
 | .help | Shows a nice help with these and other commands that can be used |
 
 ### Examples of usage
+
 In this section examples of usage using the basics from the previous section will be shown.
 
 #### Load an existing file with a function we want to test
+
 In this first example the following header will be loaded to use it:
+
 ``` c
 //Extremely useful function
 bool is_greater(int a, int b) {
@@ -47,7 +49,9 @@ The header above can be used from Cling as shown in the following video:
 id="asciicast-0tlo8e6kltl1lvqcrm8vz6pxr" async></script>
 
 #### Include a folder and load a template class from that folder
+
 This example will include a folder that contains a class that will be loaded from Cling:
+
 ``` cpp
 template <typename T>
 class MyClass {
@@ -59,6 +63,7 @@ private:
         T total;
 };
 ```
+
 ``` cpp
 #include "my_class.h"
 
@@ -78,11 +83,13 @@ The class above can be loaded from Cling as shown in the following video:
 id="asciicast-6dn649p755qhet4dr854vsclz" async></script>
 
 #### Write a function on-the-fly
+
 Cling allows us to write functions or classes on-the-fly:
 <script type="text/javascript" src="https://asciinema.org/a/82i6wmeyjiyd2j6ohlhum0zm9.js"
 id="asciicast-82i6wmeyjiyd2j6ohlhum0zm9" async></script>
 
 ### Conclusion
+
 I do not consider Cling as my main way to work in C/C++, but **it is my first option when I want to try something quick
 in a function or a class** that I am interested in using. It is not a perfect tool for everything, but it is faster than setting
 up a whole example when you are only interested in something specific.

@@ -1,15 +1,13 @@
 +++
-title = "New website using Python, HTML5 and CSS"
-date = "2015-06-24T13:50:46+02:00"
+title = "New website using Python and HTML5/CSS"
+date = "2017-06-14T13:50:46+02:00"
 author = "Oscar Forner"
-tags = [""]
+tags = ["CSS", "Django", "HTML5", "Python", "SQLite"]
 categories = ["Development"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 My new website has reached the point where it has all the minimum features required to work. In this post, I talk about the reasons for creating it and what the used design and technology are. The code of my website can be found in my [GitHub](https://github.com/maitesin/website).
 
 ### Why create a website from scratch?

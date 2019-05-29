@@ -1,15 +1,13 @@
 +++
-title = "Using LD_PRELOAD as defense from unsecure library calls"
+title = "LD_PRELOAD to fix unsecure libraries"
 date = "2016-01-01T13:50:46+02:00"
 author = "Oscar Forner"
 tags = ["Linux", "Security"]
-categories = ["OS"]
+categories = ["Operating Systems"]
 +++
 
-### Table of Contents
-[TOC]
-
 ### Introduction
+
 I have seen LD_PRELOAD used in several cases. From using it to *allow programs that link to a newer version of the 
 libstdc++*, to *cracks for applications that hijack some calls and provide the expected result to tell the application they have a valid license*.
 
@@ -18,6 +16,7 @@ libstdc++*, to *cracks for applications that hijack some calls and provide the e
 **All the code used in this post is available in this [repo](https://github.com/maitesin/blog/tree/master/ld_preload_2016_01_01/src)**
 
 As an example of these applications I will use the following code:
+
 ``` c
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,6 +37,7 @@ int main(int argc, char *argv[])
 }
 ```
 An example of its execution is the following:
+
 ``` bash
 $ ./app Wololo
 You introduced: Wololo
@@ -53,7 +53,9 @@ You introduced: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ```
 
 ### Find which dangerous calls are happenning in the application
+
 To help us in this task we will use **ltrace**. Remember, we do not have access to the code.
+
 ``` bash
 $ ltrace ./app Wololo
 __libc_start_main(0x4005f6, 2, 0x7ffc587856b8, 0x4006a0 <unfinished ...>
@@ -66,7 +68,9 @@ printf("You introduced: %s\n", "Wololo"You introduced: Wololo
 In the output above we can see that the call *strcpy* is used. It is dangerous, so we want to use the call *strncpy* instead.
 
 ### Using a more secure call than *strcpy*
+
 We can create our own version of the *strcpy* that actually calls *strncpy*:
+
 ``` c
 #include<string.h>
 
@@ -79,12 +83,15 @@ char * strcpy(char * s1, const char * s2)
 ```
 
 Now we have to compile it as a shared object (library to link):
+
 ``` bash
 gcc -shared -fPIC our_patch.c -o our_patch.so
 ```
 
 ### Using LD_PRELOAD to call our *strcpy*
+
 LD_PRELOAD will be used to load out *strcpy* instead of the one provided by the standard library.
+
 ``` bash
 $ LD_PRELOAD=$PWD/our_patch.so ./app $(perl -e 'print "A"x1000')
 You introduced: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA�@
@@ -93,6 +100,7 @@ You introduced: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Note that it only copies up to the first 511 characters of the string s2.
 
 ### Conclusion
+
 I want to point out the versatility of the LD_PRELOAD, for example think about how can this help mitigate a 0-day exploit until the code is fixed.
 
 This use of LD_PRELOAD is quite common in competitions like a [CTF](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security) (in the attach/defense style) where you are provided with a server (with some services running) and you have to keep alive your services as much time as you can, but usually the services are an older version with known issues you need to patch on the fly ;)
