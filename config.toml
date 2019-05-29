@@ -9,8 +9,8 @@ theme = "simple-hugo"
   # Top (main) menu
   [[menu.main]]
     weight = 1
-    URL = "about"
-    Name = "About-me"
+    URL = "whoami"
+    Name = "$(whoami)"
   [[menu.main]]
     weight = 2
     URL = "projects"
