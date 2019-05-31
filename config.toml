@@ -17,8 +17,8 @@ theme = "simple-hugo"
     Name = "Projects"
   [[menu.main]]
     weight = 3
-    URL = "curriculum"
-    Name = "CV"
+    URL = "resume"
+    Name = "Resume"
 
   # Bottom (footer) menu
   [[footer.main]]
