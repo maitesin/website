@@ -1,6 +1,6 @@
 +++
 title = "Resume Application"
-description = "img/resume.jpg"
+description = "img/projects/resume.jpg"
 +++
 
 This resume is an **interactive application** written in **Rust** and it can be found in [https://github.com/maitesin/rust-cv/](https://github.com/maitesin/rust-cv/).
@@ -17,4 +17,4 @@ docker run -it maitesin/resume
 
 You should get something similar to:
 
-![cv](/img/cv.gif)
+![cv](/img/projects/cv.gif)

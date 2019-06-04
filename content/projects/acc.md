@@ -1,6 +1,6 @@
 +++
 title = "ARM C Compiler (ACC)"
-description = "img/acc.jpg"
+description = "img/projects/acc.jpg"
 +++
 
 **ACC** is a pet project with the purpose of improving my knowledge of three topics. The C language, compilers and the ARM assembly. I think this is a good exercise to go deep into both topics.

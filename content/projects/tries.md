@@ -1,6 +1,6 @@
 +++
 title = "Prefix Tree Comparison"
-description = "img/tries.jpg"
+description = "img/projects/tries.jpg"
 +++
 
 **Trie, Ternary Search Tree (TST) and Radix Tree** is aimed to compare the performance of these three data structures. The three data structure are an implementation of the **abstract data type dictionary**, but they are enhanced with an extra method called "keys". That method returns the keys with that share a provided prefix. This can useful to use it in tasks such as autocomplete searches.
