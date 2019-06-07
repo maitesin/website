@@ -6,8 +6,6 @@ tags = ["Bash", "Static Analysis", "Unit Test"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 As for any other language I develop with, **I like to make use of tools and utilities to
 help me spot problems as soon as possible.**
 

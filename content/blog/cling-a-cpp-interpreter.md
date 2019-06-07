@@ -6,8 +6,6 @@ tags = ["C++", "Clang", "Interpreter"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **Cling is an interactive C++ interpreter**, built on top of Clang and LLVM compiler infrastructure. It can be found in
 [GitHub](https://github.com/vgvassilev/cling) (Note: Lately there has not been that much development on it).
 

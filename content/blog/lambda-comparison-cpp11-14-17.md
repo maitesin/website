@@ -6,8 +6,6 @@ tags = ["C++", "C++11", "C++14", "C++17", "Lambda"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 In this post I talk about what has been added in the **C++ standard** regarding **lambda expressions** since they were introduced in **C++11**.
 
 **All the code and configuration files used in this post are available in this

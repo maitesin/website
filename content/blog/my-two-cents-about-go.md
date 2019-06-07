@@ -6,8 +6,6 @@ tags = ["Go"]
 categories = ["Opinion"]
 +++
 
-### Introduction
-
 There is plenty of meterials such as talks, tutorials and posts talking about **Go**, but I want to give my opinion about what I think are the strenghts and weaknesses of **Go**.
 
 **Full disclosure**: *I do not use **Go** at work. I use **Go** in my personal projects. Therefore, **take my opinions with a grain of salt.***

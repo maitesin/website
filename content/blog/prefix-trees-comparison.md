@@ -6,8 +6,6 @@ tags = ["C++", "Prefix Tree", "Trie", "Radix Tree", "Ternary Search Tree"]
 categories = ["Data Structures"]
 +++
 
-### Introduction
-
 In this post I talk about three data structures I implemented to compare their performance in different scenarios. The three data structures are **Trie**, **Ternary Search Tree** and **Radix Tree**.
 
 **All the code for the data structures as well as the tested scenarios are available in this [repo](https://github.com/maitesin/tries.git) in GitHub.**

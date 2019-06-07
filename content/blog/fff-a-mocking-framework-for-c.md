@@ -6,8 +6,6 @@ tags = ["C", "Mock", "Unit Test"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 This post is a continuation from a previous post called [Unity; unit test for C](http://maitesin.github.io//Unity_unit_test_for_C/), but in this post we are going to use **FFF**.
 
 **FFF** is one of the available mocking frameworks for C. In this example I will use **CMake** to configure the project and build it.

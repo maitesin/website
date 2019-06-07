@@ -6,8 +6,6 @@ tags = ["ASIO", "Boost", "C++"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **Boost ASIO** library is the *defacto standard* for **network** and **low-level I/O programming**. It has a **great documentation available online**, but there are a lot of methods and classes in the library. Therefore, if it is your first attempt to use it, it can be a bit challenging.
 
 Since there is a lot of ground to cover in the **Boost ASIO** library, I will only cover the **work scheduler** and the **synchronous** methods in this post. The **asynchronous** methods and **timers** will be covered in following posts.

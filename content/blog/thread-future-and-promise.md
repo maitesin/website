@@ -6,8 +6,6 @@ tags = ["C++", "Concurrency", "Future", "Promise", "Thread"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 In the C++11 standard several **concurrency** related classes were added. I will talk about **thread**, **future** and **promise**. Yes, I know there are others more useful than these three. However, **I think that it is really important to know well the bases to be able to use the more complex ones properly**.
 
 As usual, I am working from an Arch Linux computer. Therefore, I can install **Clang** and the tools from the repository (clang). For other distributions you can find the information in the documentation.

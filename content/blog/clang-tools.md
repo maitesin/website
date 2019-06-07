@@ -6,8 +6,6 @@ tags = ["Clang", "C", "C++"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **[Clang](http://clang.llvm.org/)** is a compiler front end for the C, C++, Objective-C and Objective-C++ programming languages. It uses [LLVM](http://llvm.org/) as its back end. There are also several awesome tools build on top of **Clang** and I am going to show the three of them I use the most.
 
 As usual, I am working from an Arch Linux computer. Therefore, I can install **Clang** and the tools from the repository (clang, clang-tools-extra). For other distributions you can find the information in the documentation.

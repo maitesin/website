@@ -6,8 +6,6 @@ tags = ["ARM", "C"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **Why do you want to create your own compiler?** To answer this question I have to give you some background. For Christmas I got a **BeagleBone Black**, perfect to **learn ARM assembly**. After a few weeks of doing the usual stuff I decided I wanted a bigger project to improve my knowledge. However, the idea to start the **development of a compiler** comes from [http://www.sigbus.info/how-i-wrote-a-self-hosting-c-compiler-in-40-days.html](http://www.sigbus.info/how-i-wrote-a-self-hosting-c-compiler-in-40-days.html).
 
 **The only aim of this project is to improve my knowledge of the ARM assembly, the C language and Compilers**. The project can be found in [GitHub](https://github.com/maitesin/acc).

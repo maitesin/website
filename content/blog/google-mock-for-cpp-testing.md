@@ -6,8 +6,6 @@ tags = ["Mock", "Google Mock", "Unit Test", "Google Test", "C++"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 This post is a continuation from a previous post called [Unit test with Google Test for C++](http://maitesin.github.io//GoogleTest-C++/), but in this post we are going to use **Google Mock**, that extends the functionality of **Google Test**.
 
 **Google Mock** is one of the available frameworks for C++ to mock objects in **unit tests**. In this example I will use the same technologies as for the previous one: **CMake** to configure the project and build it, for the **dependency manager** I will use the new and shiny **[conan](https://www.conan.io/)**.

@@ -6,8 +6,6 @@ tags = ["Clang", "C", "C++"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **[Clang](http://clang.llvm.org/)** is a compiler front end for the C, C++, Objective-C and Objective-C++ programming languages. It uses [LLVM](http://llvm.org/) as its back end. In this post I talk about some of the **sanitizers** available in **Clang** (some are avilable in **GCC** as well). **They help you detect problems at run time (dynamic analysis).**
 
 As usual, I am working from an Arch Linux computer. Therefore, I can install **Clang** and the tools from the repository (clang). For other distributions you can find the information in the documentation.

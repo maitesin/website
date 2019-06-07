@@ -6,8 +6,6 @@ tags = ["ARM", "C"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 I am working on a pet project to create a **C compiler for the ARM architecture**. You can find more information about this topic in my previous post [ARM C Compiler (ACC) - Basic Compiler I](http://maitesin.github.io//ARM-C-Compiler_ACC_basic_compiler/).
 
 The source code of this project can be found in [GitHub](https://github.com/maitesin/acc).

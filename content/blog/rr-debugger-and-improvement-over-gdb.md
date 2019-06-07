@@ -6,8 +6,6 @@ tags = ["GDB", "rr", "Debugger", "C", "C++"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **rr** is a debugging tool from Mozilla that **enhances the behaviour of GDB**. It can be found in
 [GitHub](https://github.com/mozilla/rr), but my recomendation is to go first to the website of the
 [project](http://rr-project.org/). In the website you can find really useful information and documentation.

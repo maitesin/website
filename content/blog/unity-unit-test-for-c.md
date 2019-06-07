@@ -6,8 +6,6 @@ tags = ["C", "Unity", "Unit Test"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **Unity** is one of the available frameworks to create **unit tests** for C. In this example, I will use **CMake** to configure the project and build.
 
 **All the code and configuration files used in this post are available in this

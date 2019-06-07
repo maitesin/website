@@ -6,8 +6,6 @@ tags = ["C++", "Unit Test", "Google Test"]
 categories = ["Development"]
 +++
 
-### Introduction
-
 **Google Test** is one of the available Frameworks to create **unit test** for C++. In this example I will use **CMake**
 to configure the project and build. Furthermore, for the **dependency manager** I will use the new and shiny
 **[conan](https://www.conan.io/)**.
