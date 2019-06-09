@@ -20,6 +20,6 @@ sudo docker run -it maitesin/resume
 
 and you will get something similar to:
 
-![rust-cv](https://raw.githubusercontent.com/maitesin/rust-cv/master/cv.gif)
+![rust-cv](/img/projects/cv.gif)
 
 **For more information about the project please visit [https://oscarforner.com/projects/resume](https://oscarforner.com/projects/resume)**.

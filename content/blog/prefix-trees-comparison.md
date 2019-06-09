@@ -10,7 +10,6 @@ In this post I talk about three data structures I implemented to compare their p
 
 **All the code for the data structures as well as the tested scenarios are available in this [repo](https://github.com/maitesin/tries.git) in GitHub.**
 
-
 ### What is a Prefix Tree?
 
 It is an **ordered** tree data structure that is used to store a dynamic set of elements where the key is a string. All the data structures that I implemented have the following methods:
@@ -27,15 +26,13 @@ contains|Returns true if there is a value associated to the key provided
 keys|Returns a std::vector<std::string> with all the keys in the data structure that have the provided prefix. If no prefix is provided, it returns a std::vector<std::string> with all the keys in the data structure.
 lcp|Returns the longest common prefix of all keys stored in the data structure.
 
-
 ### Trie
 
 Unlike a binary search tree, none of the nodes in the tree stores the key associated with that node. Instead, **its position in the tree defines the key** with which it is associated. All the descendants of a node have a common prefix of the string associated with that node, and the root is associated with the empty string. Values are not necessarily associated with every node. Rather, **values tend only to be associated with leaves**, and with some inner nodes that correspond to keys of interest.
 
 Example of a **Trie** that contains the keys: "He", "Hello", "Kthulu", "No", "Wololo", "World", "Worst", "he":
 
-![Example of a trie](https://raw.githubusercontent.com/maitesin/tries/master/trie/trie.png)
-
+![Example of a trie](/img/projects/tries/trie.jpg)
 
 ### Ternary Search Tree
 
@@ -43,8 +40,7 @@ In a **Ternary Search Tree** nodes are arranged in a manner **similar to a binar
 
 Example of a **Ternary Search Tree** that contains the keys: "He", "Hello", "Kthulu", "No", "Wololo", "World", "Worst", "he":
 
-![Example of a ternary search tree](https://raw.githubusercontent.com/maitesin/tries/master/TST/tst.png)
-
+![Example of a ternary search tree](/img/projects/tries/tst.jpg)
 
 ### Radix Tree
 
@@ -52,55 +48,47 @@ Example of a **Ternary Search Tree** that contains the keys: "He", "Hello", "Kth
 
 Example of a **Radix Tree** that contains the keys: "He", "Hello", "Kthulu", "No", "Wololo", "World", "Worst", "he":
 
-![Example of a radix tree](https://raw.githubusercontent.com/maitesin/tries/master/Radix_Tree/radix.png)
-
+![Example of a radix tree](/img/projects/tries/radix.jpg)
 
 ### Comparison
 
 In this section I show a comparison of the performance for the three data structures in different scenarios. **Note: sometimes the Trie runs out of memory. Therefore, there is no data on these cases.**
 
-
 #### Insert
 
-![Insert](http://maitesin.github.io//images/tries/insert_time_TTR.png)
-
+![Insert](/img/projects/tries/insert_time_TTR.jpg)
 
 #### Search
 
 ##### Found
 
-![Search_Found](http://maitesin.github.io//images/tries/search_found_time_TTR.png)
+![Search_Found](/img/projects/tries/search_found_time_TTR.jpg)
 
 ##### Not found
 
-![Search_Not_Found](http://maitesin.github.io//images/tries/search_not_found_time_TTR.png)
-
+![Search_Not_Found](/img/projects/tries/search_not_found_time_TTR.jpg)
 
 #### Erase
 
 ##### Found
 
-![Remove_Found](http://maitesin.github.io//images/tries/remove_found_time_TTR.png)
+![Remove_Found](/img/projects/tries/remove_found_time_TTR.jpg)
 
 ##### Not found
 
-![Remove_Not_Found](http://maitesin.github.io//images/tries/remove_not_found_time_TTR.png)
-
+![Remove_Not_Found](/img/projects/tries/remove_not_found_time_TTR.jpg)
 
 #### Get keys
 
-![Get_Keys](http://maitesin.github.io//images/tries/get_keys_time_TTR.png)
-
+![Get_Keys](/img/projects/tries/get_keys_time_TTR.jpg)
 
 #### Get keys prefix
 
-![Get_keys_Prefix](http://maitesin.github.io//images/tries/get_keys_prefix_time_TTR.png)
-
+![Get_keys_Prefix](/img/projects/tries/get_keys_prefix_time_TTR.jpg)
 
 #### Longest common path
 
-![LCP](http://maitesin.github.io//images/tries/lcp_time_TTR.png)
-
+![LCP](/img/projects/tries/lcp_time_TTR.jpg)
 
 ### Conclusion
 
