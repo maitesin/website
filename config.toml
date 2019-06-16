@@ -1,4 +1,4 @@
-baseURL = "https://oscarforner.com/"
+baseURL = "https://www.oscarforner.com/"
 languageCode = "en-us"
 title = "Oscar Forner"
 theme = "simple-hugo"
