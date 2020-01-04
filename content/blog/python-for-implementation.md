@@ -1,6 +1,6 @@
 +++
 title = "Python's for loop explained"
-date = "2019-01-04T13:50:46+02:00"
+date = "2020-01-04T13:50:46+02:00"
 author = "Oscar Forner"
 tags = ["Python", "For", "Loop"]
 categories = ["Development"]

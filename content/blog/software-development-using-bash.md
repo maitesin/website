@@ -1,6 +1,6 @@
 +++
 title = "Software development using BASH"
-date = "2018-02-24T13:50:46+02:00"
+date = "2019-11-24T13:50:46+02:00"
 author = "Oscar Forner"
 tags = ["Bash", "Static Analysis", "Unit Test"]
 categories = ["Development"]

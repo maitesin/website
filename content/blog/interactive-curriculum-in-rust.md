@@ -1,6 +1,6 @@
 +++
 title = "Interactive curriculum in Rust"
-date = "2017-09-23T13:50:46+02:00"
+date = "2018-07-23T13:50:46+02:00"
 author = "Oscar Forner"
 tags = ["Curriculum", "Docker", "Rust"]
 categories = ["Development"]
