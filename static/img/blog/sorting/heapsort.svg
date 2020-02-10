@@ -1,0 +1,95 @@
+<svg class="bob" font-family="arial" font-size="14" height="384" width="168" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="triangle" markerHeight="10" markerUnits="strokeWidth" markerWidth="10" orient="auto" refX="15" refY="10" viewBox="0 0 50 20">
+<path d="M 0 0 L 30 10 L 0 20 z"/>
+</marker>
+</defs>
+<style>
+
+    line, path {
+      stroke: black;
+      stroke-width: 2;
+      stroke-opacity: 1;
+      fill-opacity: 1;
+      stroke-linecap: round;
+      stroke-linejoin: miter;
+    }
+    circle {
+      stroke: black;
+      stroke-width: 2;
+      stroke-opacity: 1;
+      fill-opacity: 1;
+      stroke-linecap: round;
+      stroke-linejoin: miter;
+    }
+    circle.solid {
+      fill:black;
+    }
+    circle.open {
+      fill:transparent;
+    }
+    tspan.head{
+        fill: none;
+        stroke: none;
+    }
+    
+</style>
+<path d=" M 4 24 L 8 24 M 4 24 L 4 32 M 8 24 L 16 24 M 8 24 L 16 24 L 24 24 M 16 24 L 24 24 L 32 24 M 24 24 L 32 24 M 36 24 L 32 24 M 36 24 L 40 24 M 36 24 L 36 32 M 40 24 L 48 24 M 40 24 L 48 24 L 56 24 M 48 24 L 56 24 L 64 24 M 56 24 L 64 24 M 68 24 L 64 24 M 68 24 L 72 24 M 68 24 L 68 32 M 72 24 L 80 24 M 72 24 L 80 24 L 88 24 M 80 24 L 88 24 L 96 24 M 88 24 L 96 24 M 100 24 L 96 24 M 100 24 L 104 24 M 100 24 L 100 32 M 104 24 L 112 24 M 104 24 L 112 24 L 120 24 M 112 24 L 120 24 L 128 24 M 120 24 L 128 24 M 132 24 L 128 24 M 132 24 L 136 24 M 132 24 L 132 32 M 136 24 L 144 24 M 136 24 L 144 24 L 152 24 M 144 24 L 152 24 L 160 24 M 152 24 L 160 24 M 164 24 L 160 24 M 164 24 L 164 32 M 4 32 L 4 48 M 4 32 L 4 48 M 36 32 L 36 48 M 36 32 L 36 48 M 68 32 L 68 48 M 68 32 L 68 48 M 100 32 L 100 48 M 100 32 L 100 48 M 132 32 L 132 48 M 132 32 L 132 48 M 164 32 L 164 48 M 164 32 L 164 48 M 4 56 L 4 48 M 4 56 L 8 56 L 16 56 M 8 56 L 16 56 L 24 56 M 16 56 L 24 56 L 32 56 M 24 56 L 32 56 M 36 56 L 36 48 M 36 56 L 32 56 M 36 56 L 40 56 L 48 56 M 40 56 L 48 56 L 56 56 M 48 56 L 56 56 L 64 56 M 56 56 L 64 56 M 68 56 L 68 48 M 68 56 L 64 56 M 68 56 L 72 56 L 80 56 M 72 56 L 80 56 L 88 56 M 80 56 L 88 56 L 96 56 M 88 56 L 96 56 M 100 56 L 100 48 M 100 56 L 96 56 M 100 56 L 104 56 L 112 56 M 104 56 L 112 56 L 120 56 M 112 56 L 120 56 L 128 56 M 120 56 L 128 56 M 132 56 L 132 48 M 132 56 L 128 56 M 132 56 L 136 56 L 144 56 M 136 56 L 144 56 L 152 56 M 144 56 L 152 56 L 160 56 M 152 56 L 160 56 M 164 56 L 164 48 M 164 56 L 160 56 M 4 104 L 8 104 M 4 104 L 4 112 M 8 104 L 16 104 M 8 104 L 16 104 L 24 104 M 16 104 L 24 104 L 32 104 M 24 104 L 32 104 M 36 104 L 32 104 M 36 104 L 40 104 M 36 104 L 36 112 M 40 104 L 48 104 M 40 104 L 48 104 L 56 104 M 48 104 L 56 104 L 64 104 M 56 104 L 64 104 M 68 104 L 64 104 M 68 104 L 72 104 M 68 104 L 68 112 M 72 104 L 80 104 M 72 104 L 80 104 L 88 104 M 80 104 L 88 104 L 96 104 M 88 104 L 96 104 M 100 104 L 96 104 M 100 104 L 104 104 M 100 104 L 100 112 M 104 104 L 112 104 M 104 104 L 112 104 L 120 104 M 112 104 L 120 104 L 128 104 M 120 104 L 128 104 M 132 104 L 128 104 M 132 104 L 136 104 M 132 104 L 132 112 M 136 104 L 144 104 M 136 104 L 144 104 L 152 104 M 144 104 L 152 104 L 160 104 M 152 104 L 160 104 M 164 104 L 160 104 M 164 104 L 164 112 M 4 112 L 4 128 M 4 112 L 4 128 M 36 112 L 36 128 M 36 112 L 36 128 M 68 112 L 68 128 M 68 112 L 68 128 M 100 112 L 100 128 M 100 112 L 100 128 M 132 112 L 132 128 M 132 112 L 132 128 M 164 112 L 164 128 M 164 112 L 164 128 M 4 136 L 4 128 M 4 136 L 8 136 L 16 136 M 8 136 L 16 136 L 24 136 M 16 136 L 24 136 L 32 136 M 24 136 L 32 136 M 36 136 L 36 128 M 36 136 L 32 136 M 36 136 L 40 136 L 48 136 M 40 136 L 48 136 L 56 136 M 48 136 L 56 136 L 64 136 M 56 136 L 64 136 M 68 136 L 68 128 M 68 136 L 64 136 M 68 136 L 72 136 L 80 136 M 72 136 L 80 136 L 88 136 M 80 136 L 88 136 L 96 136 M 88 136 L 96 136 M 100 136 L 100 128 M 100 136 L 96 136 M 100 136 L 104 136 L 112 136 M 104 136 L 112 136 L 120 136 M 112 136 L 120 136 L 128 136 M 120 136 L 128 136 M 132 136 L 132 128 M 132 136 L 128 136 M 132 136 L 136 136 L 144 136 M 136 136 L 144 136 L 152 136 M 144 136 L 152 136 L 160 136 M 152 136 L 160 136 M 164 136 L 164 128 M 164 136 L 160 136 M 64 224 L 72 208 L 64 224 M 88 224 L 80 208 L 88 224 M 56 240 L 64 224 L 56 240 M 96 240 L 88 224 L 96 240 M 40 304 L 48 288 L 40 304 M 64 304 L 56 288 L 64 304 M 32 320 L 40 304 L 32 320 M 72 320 L 64 304 L 72 320" fill="none"/>
+<path d="" fill="none" stroke-dasharray="3 3"/>
+<text x="1" y="12">
+1.
+</text>
+<text x="17" y="44">
+5
+</text>
+<text x="49" y="44">
+2
+</text>
+<text x="81" y="44">
+9
+</text>
+<text x="113" y="44">
+4
+</text>
+<text x="145" y="44">
+7
+</text>
+<text x="1" y="92">
+2.
+</text>
+<text x="17" y="124">
+2
+</text>
+<text x="49" y="124">
+5
+</text>
+<text x="81" y="124">
+4
+</text>
+<text x="113" y="124">
+9
+</text>
+<text x="145" y="124">
+7
+</text>
+<text x="73" y="188">
+2
+</text>
+<text x="49" y="268">
+5
+</text>
+<text x="97" y="268">
+4
+</text>
+<text x="25" y="348">
+9
+</text>
+<text x="73" y="348">
+7
+</text>
+<circle class="open" cx="76" cy="184" r="16"/>
+<circle class="open" cx="52" cy="264" r="16"/>
+<circle class="open" cx="100" cy="264" r="16"/>
+<circle class="open" cx="28" cy="344" r="16"/>
+<circle class="open" cx="76" cy="344" r="16"/>
+</svg>
