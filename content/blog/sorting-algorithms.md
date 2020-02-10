@@ -58,10 +58,12 @@ Given an input array it gets split in half over and over until the length of the
 </center>
 
 ## Optimizations
-Since **merge sort** is a really consistent algorithm, the main optimizations have been focused on lowering the constants of its performance. The most notable optimization is that **merge sort is highly parallelizable**, this means that it can be run in multiple cores, or even distributed among several machines.
+Since **merge sort** is a really consistent algorithm, the main optimizations have been focused on lowering the constants of its performance and making it work **in place**. The most notable optimizations are that an **in place merge sort** and **merge sort is highly parallelizable**, this means that it can be run in multiple cores, or even distributed among several machines.
 
 ## When to use it?
 Since **merge sort has the most predictable execution time**, it is used when the worst case scenario cannot be allowed to be greater than *O(n log n)*. Moreover, the **merge sort algorithm is used when sorting tables, to take advantage of it being stable**.
+
+Because of the consistent performance of the **merge sort**, being **stable** and having an **optimization to be in place**, some standard libraries from programming languages use it as its default sorting algorithm.
 
 # Heapsort
 **Heapsort has an equivalent predictable performance as merge sort**, but **heapsort is not a stable** algorithm. The **heapsort** algorithm leverages the usage and performance of the **priority queue implementation of a min-heap**.
