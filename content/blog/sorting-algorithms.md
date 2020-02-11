@@ -73,7 +73,7 @@ Because of the consistent performance of the **merge sort**, being **stable** an
 Given an input array, first of all an algorithm known as **heapify**, with cost *O(n)*, must be applied to it. This leaves the array ready to be used as a **min-heap**. At this point, the only thing left to do is extracting the *n* elements in the heap. This has a cost of *O(log n)* per element extracted, giving it a total cost of *O(n log n)*.
 
 <center>
-<div style="width:30%">
+<div style="width:40%">
 ![](/img/blog/sorting/heapsort.svg)
 </div>
 </center>
