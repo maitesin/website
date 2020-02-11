@@ -19,11 +19,10 @@ Arguably these are the for most important sorting algorithms, **Quicksort**, **M
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Quicksort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:red">O(n^2)</span> | <span style="color:green">O(1)</span> | <span style="color:red">No</span> |
 | Merge Sort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:red">O(n)</span> | <span style="color:green">Yes</span> |
-| Heapsort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(1)*</span> | <span style="color:red">No</span> |
+| Heapsort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(1)</span> | <span style="color:red">No</span> |
 | Insertion Sort | <span style="color:green">O(n)</span> | <span style="color:red">O(n^2)</span> | <span style="color:red">O(n^2)</span> | <span style="color:green">O(1)</span> | <span style="color:green">Yes</span> |
 
 </center>
-* **Heapsort** has an space cost of *O(1)* to keep the sorted information inside the heap. If you want to retrieve it into an array you will need an extra *n* sized array, making it a space cost of *O(n)*.
 
 # Quicksort
 **Quicksort is the fastest one of the lot**, as its constants are smaller than the others. The best case scenario *O(n log n)* happens when **the data to be sorted is not already sorted or all their values are the same**. Another of its strong points is that it is **in place**, however, it is **not stable**.
@@ -67,13 +66,13 @@ Since **merge sort has the most predictable execution time**, it is used when th
 Because of the consistent performance of the **merge sort**, being **stable** and having an **optimization to be in place**, some standard libraries from programming languages use it as its default sorting algorithm.
 
 # Heapsort
-**Heapsort has an equivalent predictable performance as merge sort**, but **heapsort is not a stable** algorithm. The **heapsort** algorithm leverages the usage and performance of the **priority queue implementation of a min-heap**.
+**Heapsort has an equivalent predictable performance as merge sort**, but **heapsort is not a stable** algorithm. The **heapsort** algorithm leverages the usage and performance of the **priority queue implementation of a max-heap**.
 
 ## How does it works?
-Given an input array, first of all an algorithm known as **heapify**, with cost *O(n)*, must be applied to it. This leaves the array ready to be used as a **min-heap**. At this point, the only thing left to do is extracting the *n* elements in the heap. This has a cost of *O(log n)* per element extracted, giving it a total cost of *O(n log n)*.
+Given an input array, first of all an algorithm known as **heapify**, with cost *O(n)*, must be applied to it. This leaves the array ready to be used as a **max-heap**. At this point, the only thing left to do is extracting the *n* elements in the heap. This has a cost of *O(log n)* per element extracted, giving it a total cost of *O(n log n)*.
 
 <center>
-<div style="width:40%">
+<div style="width:30%">
 ![](/img/blog/sorting/heapsort.svg)
 </div>
 </center>
