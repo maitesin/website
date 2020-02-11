@@ -19,15 +19,16 @@ Arguably these are the for most important sorting algorithms, **Quicksort**, **M
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Quicksort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:red">O(n^2)</span> | <span style="color:green">O(1)</span> | <span style="color:red">No</span> |
 | Merge Sort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:red">O(n)</span> | <span style="color:green">Yes</span> |
-| Heapsort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n)</span> | <span style="color:red">No</span> |
+| Heapsort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(1)*</span> | <span style="color:red">No</span> |
 | Insertion Sort | <span style="color:green">O(n)</span> | <span style="color:red">O(n^2)</span> | <span style="color:red">O(n^2)</span> | <span style="color:green">O(1)</span> | <span style="color:green">Yes</span> |
 
 </center>
+* **Heapsort** has an space cost of *O(1)* to keep the sorted information inside the heap. If you want to retrieve it into an array you will need an extra *n* sized array, making it a space cost of *O(n)*.
 
 # Quicksort
 **Quicksort is the fastest one of the lot**, as its constants are smaller than the others. The best case scenario *O(n log n)* happens when **the data to be sorted is not already sorted or all their values are the same**. Another of its strong points is that it is **in place**, however, it is **not stable**.
 
-## How it works?
+## How does it works?
 Given an input array a pivot element needs to be selected (a simple approach is to select the first element in the array). Then, you have to swap elements in the array to leave all smaller elements than the pivot in the left side of the pivot, and the elements equal or greater than the pivot in the right hand side of it. **This will leave the pivot in its sorted place in the array**. Now repeat the same process with the two arrays (left and right) from the pivot until the length of the remaining arrays is less than 2.
 
 <center>
@@ -48,7 +49,7 @@ Since **quicksort is the fastest** of the sorting algorithms it's the most commo
 # Merge Sort
 **Merge sort has the most predictable performance of the lot**, since its best and worst case scenario is the same *O(n log n)*. This is due to it not being affected by the input state or values. In addition, it is a **stable** algorithm, but it requires an extra *n* space to run, where *n* is the length of the array.
 
-## How it works?
+## How does it works?
 Given an input array it gets split in half over and over until the length of the remaining arrays is less than 2. At that point, all these arrays are sorted, now we just need to merge these arrays, but keeping them sorted.
 
 <center>
@@ -68,7 +69,7 @@ Because of the consistent performance of the **merge sort**, being **stable** an
 # Heapsort
 **Heapsort has an equivalent predictable performance as merge sort**, but **heapsort is not a stable** algorithm. The **heapsort** algorithm leverages the usage and performance of the **priority queue implementation of a min-heap**.
 
-## How it works?
+## How does it works?
 Given an input array, first of all an algorithm known as **heapify**, with cost *O(n)*, must be applied to it. This leaves the array ready to be used as a **min-heap**. At this point, the only thing left to do is extracting the *n* elements in the heap. This has a cost of *O(log n)* per element extracted, giving it a total cost of *O(n log n)*.
 
 <center>
@@ -86,7 +87,7 @@ Given an input array, first of all an algorithm known as **heapify**, with cost 
 # Insertion Sort
 **Insertion sort has the best case performance**, but it also has the worst average and worst case performance. However, **insertion sort is a stable and in place** algorithm.
 
-## How it works?
+## How does it works?
 **Insertion sort** leaves the already sorted elements to the left of the array and the unsorted elements to the right. Hence, it first sorts the first element of the array, then it sorts the second element of the array, and so on and so forth until every element of the arrray has been sorted.
 
 <center>
