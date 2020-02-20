@@ -11,7 +11,7 @@ Before we start, I want to define a couple of terms:
 * **In place**: the algorithm does not require extra space to be executed. In other words, if you have to sort and array of *n* elements, the algorithm will use only that array of *n* elements.
 * **Stable**: if two elements of the array are the same, they will keep the same relative order in the array after being sorted. For example, if you want to sort the array [<span style="color:green">3</span>, 1, 4, <span style="color:red">3</span>, 2], the result would be [1, 2, <span style="color:green">3</span>, <span style="color:red">3</span>, 4].
 
-Arguably these are the for most important sorting algorithms, **Quicksort**, **Merge Sort**, **Heapsort** and **Insertion Sort**. 
+Arguably these are the four most important sorting algorithms, **Quicksort**, **Merge Sort**, **Heapsort** and **Insertion Sort**. 
 
 <center>
 
