@@ -18,7 +18,7 @@ The template engine for the website is **Jinja2** and it allows to create incred
 
 ## Frontend
 
-The frontend is build using **HTML5** and **CSS**. I avoided the use of **JavaScript** as much as I could for several reasons.
+The frontend is build using **HTML5** and **CSS3**. I avoided the use of **JavaScript** as much as I could for several reasons.
 
  * **Slow website on mobile devices**. Since more than 70% of the people coming to my previous website where coming from a mobile device, I wanted them to have a great experience (without sacrificing the experience of the ones coming from a computer).
  * Since I do not know **Javascript**, I wanted to avoid it as much as possible to not have to maintain code that I do not understand how it works.
