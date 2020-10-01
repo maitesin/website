@@ -9,10 +9,10 @@ The backend is build using **Django** and **SQLite**. Since the current usage of
 
 The database contains four tables: **posts**, **categories**, **tags** and **post-tags**.
 
- * **posts** contains the information about each post and its content (written in **Markdown**).
- * **categories** contains the name of each category.
- * **tags** contains the name of each tag.
- * **post-tags** contains the relation between all posts and their associated tags.
+ * **posts:** contains the information about each post and its content (written in **Markdown**).
+ * **categories:** contains the name of each category.
+ * **tags:** contains the name of each tag.
+ * **post-tags:** contains the relation between all posts and their associated tags.
 
 The template engine for the website is **Jinja2** and it allows to create incredible and extendable themes and sites with a minimal boilerplate.
 
