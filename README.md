@@ -1,6 +1,6 @@
 ![Screenshot of the website](https://github.com/maitesin/website/raw/master/post/static/img/website.png)
 # Structure of the website
-
+Good Project
 The structure of the website is quite simple and relies a lot on the backend to do the hard work.
 
 ## Backend
