@@ -1,5 +1,5 @@
 ![Screenshot of the website](https://github.com/maitesin/website/raw/master/post/static/img/website.png)
-# Structure of the website
+# Structure of this Powerfull website
 
 The structure of the website is quite simple and relies a lot on the backend to do the hard work.
 
@@ -14,7 +14,7 @@ The database contains four tables: **posts**, **categories**, **tags** and **pos
  * **tags** contains the name of each tag.
  * **post-tags** contains the relation between all posts and their associated tags.
 
-The template engine for the website is **Jinja2** and it allows to create incredible and extendable themes and sites with a minimal boilerplate.
+The template engine for this website is **Jinja2** and it allows to create incredible and extendable themes and sites with a minimal boilerplate.
 
 ## Frontend
 
