@@ -13,28 +13,68 @@ draft = true
 
 There are multiple way to benefit from this amazing feature, from packing your whole webapp with all its assets, to have binaries containing their DB migrations to always have the correct DB schema to interact with it.
 
-In this post we will focus on the later case and use it as an example to explain the Go Embed feature.
+*Note: I do not recommend to serve all webapp assets from the binary for webapps with high traffic load. Using Nginx, or a CDN would be way better.*
 
 ## Go-Migrate to run migrations
 
 [Go-Migrate](https://github.com/golang-migrate/migrate) is a library to handle all aspects of DB migrations in Go. It is both a [CLI tool](https://github.com/golang-migrate/migrate#cli-usage), and a [library](https://github.com/golang-migrate/migrate#use-in-your-go-project).
 
-### Installing Go-Migrate CLI
+## Go-Migrate with Go Embed
 
-```bash
-$ go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
-go: downloading github.com/golang-migrate/migrate v3.5.4+incompatible
-go: downloading github.com/lib/pq v1.10.0
+The following source code shows how Go-Migrate can use the embedded migrations in the binary.
+
+```go
+package main
+
+import (
+	"database/sql"
+	"embed"
+	"fmt"
+
+	"github.com/golang-migrate/migrate/v4"
+	_ "github.com/golang-migrate/migrate/v4/database/postgres"
+	"github.com/golang-migrate/migrate/v4/source/iofs"
+	_ "github.com/lib/pq"
+)
+
+const dbURL = "postgres://postgres:postgres@localhost:54321/examples?sslmode=disable"
+
+//go:embed migrations/*.sql
+var migrationsFS embed.FS
+
+func main() {
+	dbConn, err := sql.Open("postgres", dbURL)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer dbConn.Close()
+
+	d, err := iofs.New(migrationsFS, "migrations")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	migrations, err := migrate.NewWithSourceInstance("iofs", d, dbURL)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	err = migrations.Up()
+	if err != nil && err.Error() != "no change" {
+		fmt.Println(err)
+		return
+	}
+
+	// Here goes your awesome code to get rich :D
+}
 ```
 
-### Create new migration
+## Links
 
-```bash
-$ migrate create -ext sql -dir migrations -seq create_examples_table
-/home/maitesin/dev/blog/2023_go_embed_for_migrations/migrations/000001_create_examples_table.up.sql
-/home/maitesin/dev/blog/2023_go_embed_for_migrations/migrations/000001_create_examples_table.down.sql
-```
-
-## Putting it all together
-
-
+* [Source Code used in this post](https://github.com/maitesin/blog/tree/master/2023_go_embed_for_migrations)
+* [Embed Library Documentation](https://pkg.go.dev/embed)
+* [Go 1.16 release notes](https://tip.golang.org/doc/go1.16#library-embed)
+* [Go-Migrate GitHub repository](https://github.com/golang-migrate/migrate)
