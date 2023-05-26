@@ -1,6 +1,6 @@
 +++
 title = "Go embed for migrations"
-date = "2023-02-03T13:50:46+02:00"
+date = "2023-05-26T13:50:46+02:00"
 author = "Oscar Forner"
 tags = ["Go"]
 categories = ["Development", "Database", "Migration"]
