@@ -6,6 +6,8 @@ tags = ["Linux", "Security"]
 categories = ["Operating Systems"]
 +++
 
+## Introduction
+
 I have seen LD_PRELOAD used in several cases. From using it to *allow programs that link to a newer version of the 
 libstdc++*, to *cracks for applications that hijack some calls and provide the expected result to tell the application they have a valid license*.
 
@@ -50,7 +52,7 @@ You introduced: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 [1] 6625 segmentation fault (core dumped) ./app $(perl -e 'print "A"x1000')
 ```
 
-### Find which dangerous calls are happenning in the application
+## Find which dangerous calls are happenning in the application
 
 To help us in this task we will use **ltrace**. Remember, we do not have access to the code.
 
@@ -65,7 +67,7 @@ printf("You introduced: %s\n", "Wololo"You introduced: Wololo
 
 In the output above we can see that the call *strcpy* is used. It is dangerous, so we want to use the call *strncpy* instead.
 
-### Using a more secure call than *strcpy*
+## Using a more secure call than *strcpy*
 
 We can create our own version of the *strcpy* that actually calls *strncpy*:
 
@@ -86,7 +88,7 @@ Now we have to compile it as a shared object (library to link):
 gcc -shared -fPIC our_patch.c -o our_patch.so
 ```
 
-### Using LD_PRELOAD to call our *strcpy*
+## Using LD_PRELOAD to call our *strcpy*
 
 LD_PRELOAD will be used to load out *strcpy* instead of the one provided by the standard library.
 
@@ -97,7 +99,7 @@ You introduced: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 Note that it only copies up to the first 511 characters of the string s2.
 
-### Conclusion
+## Conclusion
 
 I want to point out the versatility of the LD_PRELOAD, for example think about how can this help mitigate a 0-day exploit until the code is fixed.
 

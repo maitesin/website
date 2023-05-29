@@ -6,6 +6,8 @@ tags = ["Image","Manipulation","Terminal"]
 categories = ["Tools"]
 +++
 
+## Introduction
+
 Lately I have been in need of cropping some images, the easy thing to do would have been to install Gimp and do it there, but that is not fun.
 
 I end up using **ImageMagick** to do some basic image manipulations. Since it took me few searches to find what I needed I decided to write a post in my blog so whenever I need it again, I know where I can find it easily.

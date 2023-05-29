@@ -6,13 +6,15 @@ tags = ["C", "Mock", "Unit Test"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 This post is a continuation from a previous post called [Unity; unit test for C](http://maitesin.github.io//Unity_unit_test_for_C/), but in this post we are going to use **FFF**.
 
 **FFF** is one of the available mocking frameworks for C. In this example I will use **CMake** to configure the project and build it.
 
 **All the code and configuration files used in this post are available in this [repo](https://github.com/maitesin/blog/tree/master/fff_mock_2016_02_18) in GitHub.**
 
-### Why do we need to mock functions?
+## Why do we need to mock functions?
 
 To answer that question I will introduce the signature of the two methods I will use during this post.
 
@@ -52,7 +54,7 @@ int both_even(int a, int b)
 In this case we will use the *modulo* function to calculate *both_even*, but we do not have the implementation of *modulo*. This is intended because we do not want to use the actual code of the *modulo* function. We want to test **only the code in *both_even***. Therefore, the *modulo* function will be mocked.
 
 
-### Unit test with FFF
+## Unit test with FFF
 
 The following code is an example of 6 **unit tests** written using the **FFF** framework:
 
@@ -276,6 +278,6 @@ $ ./run_test
 SUCCESS
 ```
 
-### Conclusion
+## Conclusion
 
 **FFF**, or any mocking framework, is an important tool for developers because **it allows to create unit tests for interoperability of different functions**. Furthermore, you can create **unit tests** that are focused on a single function without worring if the functions to which it depends are working properly.

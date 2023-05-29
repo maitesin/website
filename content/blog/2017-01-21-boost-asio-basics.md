@@ -6,6 +6,8 @@ tags = ["ASIO", "Boost", "C++"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **Boost ASIO** library is the *defacto standard* for **network** and **low-level I/O programming**. It has a **great documentation available online**, but there are a lot of methods and classes in the library. Therefore, if it is your first attempt to use it, it can be a bit challenging.
 
 Since there is a lot of ground to cover in the **Boost ASIO** library, I will only cover the **work scheduler** and the **synchronous** methods in this post. The **asynchronous** methods and **timers** will be covered in following posts.
@@ -16,13 +18,13 @@ As always, **all the code used in this post is available in this [repo](https://
 
 The videos are made with **[asciinema](https://asciinema.org/)**, that means **you can copy from the video**.
 
-### IO Service
+## IO Service
 
 The **IO Service** is the mainstay of the **Boost ASIO**. Basically, it is in charge of scheduling the work to be done. In this section, I will use the **IO Service** to demonstrate how it performs the scheduling. However, it is not recommended to use it for this purpose, as [**Sean Parent** shows in this talk](https://www.youtube.com/watch?v=QIHy8pXbneI).
 
 **The whole idea of this section is to help you understand how the Boost ASIO works underneath.**
 
-#### One worker
+### One worker
 
 The code for this simple example is to just show how the **IO Service** can perform some work.
 
@@ -49,12 +51,12 @@ int main()
 
 The code is quite straightforward, it provides 6 tasks to the **IO Service** and then it executes them.
 
-##### Execution
+#### Execution
 
 The output of the previous code is what everybody can expect.
 <script type="text/javascript" src="https://asciinema.org/a/1bwz66y6imztewkt2kriaqnjh.js" id="asciicast-1bwz66y6imztewkt2kriaqnjh" async></script>
 
-#### Two workers
+### Two workers
 
 The code for the two workers is a bit more complicated. The idea is the same, but with two threads executing tasks instead of one.
 
@@ -89,18 +91,18 @@ int main()
 
 The complexity of the previous code is the usage of threads, but it is not overwhelming.
 
-##### Execution
+#### Execution
 
 The output of the *two workers* code can be the same as from the *one worker* section. However, it is not guaranteed that it would be the same. This can be seen in the following execution:
 <script type="text/javascript" src="https://asciinema.org/a/da8dspoce5ud1k1a49rm9qlzm.js" id="asciicast-da8dspoce5ud1k1a49rm9qlzm" async></script>
 
-### Synchronous
+## Synchronous
 
 In order to use **Boost ASIO** for **network** it is not required to know how the **IO Service** works. Actually, the explicit usage of **IO Service** as it is done in the previous section is not recommended.
 
 In this section, the usage of **synchronous** calls is shown in order to create a **client** and a **server** programs.
 
-#### Client
+### Client
 
 The code for the client sends a message - provided as a parameter - to the server. After that the client reads the answer from the server and prints it in the standard output.
 
@@ -204,7 +206,7 @@ The last interesting part of the code is the *read a message from the end point*
   } while(error && error != boost::asio::error::eof);
 ```
 
-#### Server
+### Server
 
 The code for the server receives a message, then it returns the message backwards to the sender.
 
@@ -300,6 +302,6 @@ The last interesting part of the code is the *read a message*. In this case, it 
 
 <script type="text/javascript" src="https://asciinema.org/a/10bf5yr6qyuqh5oxm2ru65qlr.js" id="asciicast-10bf5yr6qyuqh5oxm2ru65qlr" async></script>
 
-### Conclusion
+## Conclusion
 
 **The simplicity of the Boost ASIO is matched only by its power**. It is quite simple to create a **synchronous** **client/server** application. These are the basics of **Boost ASIO** and it should allow you to understand more complex usage of it.

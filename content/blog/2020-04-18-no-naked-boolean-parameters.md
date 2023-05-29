@@ -6,6 +6,8 @@ tags = ["Pattern", "Dessign"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **We all have used naked boolean parameters at some point during our lives**, specially when we were starting to learn to program. Other times we add them when refactoring code, or we are just hacking somthing together. However, **naked boolean parameters are a code smell and signs of a bad code**.
 
 First, **they hurt the readability of the code** and since we spend the vast majority of our time reading code, that is a big reason to avoid naked boolean parameters. Okay... some IDEs add nice information like the name of the parameters passed, but you do not have that when you are doing code reviews :D

@@ -6,6 +6,8 @@ tags = ["Bash", "Static Analysis", "Unit Test"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 As for any other language I develop with, **I like to make use of tools and utilities to
 help me spot problems as soon as possible.**
 
@@ -22,7 +24,7 @@ to be able to develop it in the same way I do for other languages.**
 
 As always, **all the code used in this post is available in this [repo](https://github.com/maitesin/blog/tree/master/bash_2018_02_24).**
 
-### Formatter
+## Formatter
 
 A formatter's duty is to keep the code style the same across a whole project. For
 `Bash` I like to use [shfmt](https://github.com/mvdan/sh) as the formatter. It
@@ -154,7 +156,7 @@ case ${number} in
 esac
 ```
 
-### Linter (Static Analysis)
+## Linter (Static Analysis)
 
 Any good linter's job is to point out all the errors that can found in your code. My favourite `Bash` linter is `ShellCheck`. It can be used from their website [https://www.shellcheck.net/](https://www.shellcheck.net/) or installing their command line application in your system.
 
@@ -196,7 +198,7 @@ In errors.sh line 5:
 Finding errors like these by just looking at the code is hard. So, let a computer do
 it for you.
 
-### Unit Test Framework
+## Unit Test Framework
 
 Last but not least, a unit test framework for `Bash`. My choice is [Bats](https://github.com/sstephenson/bats).
 
@@ -265,7 +267,7 @@ $ ./test_functions.sh
 4 tests, 0 failures
 ```
 
-### Conclusion
+## Conclusion
 
 `Bash` is a great scripting language, but **when you have to write more than a
 simple script to perform a task it is worth spending the time in using a formatter,

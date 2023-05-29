@@ -6,6 +6,8 @@ tags = ["C++", "Unit Test", "Google Test"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **Google Test** is one of the available Frameworks to create **unit test** for C++. In this example I will use **CMake**
 to configure the project and build. Furthermore, for the **dependency manager** I will use the new and shiny
 **[conan](https://www.conan.io/)**.
@@ -16,7 +18,7 @@ Because these technologies are widely use it in real projects.
 **All the code and configuration files used in this post are available in this
 [repo](https://github.com/maitesin/blog/tree/master/google_test_2015_12_22) in GitHub.**
 
-### Step 1 Install conan, configure project and gather dependencies
+## Step 1 Install conan, configure project and gather dependencies
 
 First of all we need to have install conan from pip2 doing:
 
@@ -58,7 +60,7 @@ Requirements
 Generated conanbuildinfo.cmake
 ```
 
-### Step 2 configuring CMake
+## Step 2 configuring CMake
 
 The configuration will be done in the **CMakeLists.txt** file:
 
@@ -74,7 +76,7 @@ ADD_EXECUTABLE(run_test src/test.cpp)
 TARGET_LINK_LIBRARIES(run_test ${CONAN_LIBS})
 ```
 
-### Step 3 code and unit test
+## Step 3 code and unit test
 
 The code will be held in the **src** folder. It will contain two files: *functions.h* and *test.cpp*.
 
@@ -110,7 +112,7 @@ int main(int argc, char **argv) {
 }
 ```
 
-### Step 4 putting all together
+## Step 4 putting all together
 
 What is left to do is actually build the project and run the test. In order to do this we need to run:
 
@@ -179,7 +181,7 @@ This will result with the following output:
 [ PASSED ] 2 tests.
 ```
 
-### More advanced example
+## More advanced example
 
 These are the basics of how to use **Google Test** to create **unit test** for your application. In the website of the project there are plenty of more advanced examples.
 

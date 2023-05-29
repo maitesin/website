@@ -6,6 +6,8 @@ tags = ["Clang", "C", "C++"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **[Clang](http://clang.llvm.org/)** is a compiler front end for the C, C++, Objective-C and Objective-C++ programming languages. It uses [LLVM](http://llvm.org/) as its back end. In this post I talk about some of the **sanitizers** available in **Clang** (some are avilable in **GCC** as well). **They help you detect problems at run time (dynamic analysis).**
 
 As usual, I am working from an Arch Linux computer. Therefore, I can install **Clang** and the tools from the repository (clang). For other distributions you can find the information in the documentation.
@@ -14,7 +16,7 @@ As always, **all the code used in this post is available in this [repo](https://
 
 The videos are made with **[asciinema](https://asciinema.org/)**, that means **you can copy from the video**.
 
-### Clang sanitizers
+## Clang sanitizers
 
 The **Clang** sanitizers available are:
 
@@ -27,9 +29,9 @@ The **Clang** sanitizers available are:
 
 In this post I show **AddressSanitizer**, **ThreadSanitizer**, **MemorySanitizer** and **UndefinedBehaviorSanitizer**. I do not talk about **DataFlowSanitizer** because it is a work in progress and it is really specific of the application where you need it. Moreover, I do not talk about **LeakSanitizzer** because it is a subset of checks from **AddressSanitizer** that can be run independently from it.
 
-#### AddressSanitizer
+## AddressSanitizer
 
-##### Usage of freed memory
+### Usage of freed memory
 
 The code below is trying to use a region of memory that has been freed already.
 
@@ -51,7 +53,7 @@ clang++-3.8 -fsanitize=address -g -o free free.cpp
 When you run the previously generated executable you will get something similar to the following:
 <script type="text/javascript" src="https://asciinema.org/a/3zcpyg71hz6sxnhhxru7pvgtj.js" id="asciicast-3zcpyg71hz6sxnhhxru7pvgtj" async></script>
 
-##### Buffer overflow
+### Buffer overflow
 
 The code below is trying to access a memory region that is not part of the allocated one.
 
@@ -72,7 +74,7 @@ clang++-3.8 -fsanitize=address -g -o overflow overflow.cpp
 When you run the previously generated executable you will get something similar to the following:
 <script type="text/javascript" src="https://asciinema.org/a/c0338bklzn84ptgafgaj4kas3.js" id="asciicast-c0338bklzn84ptgafgaj4kas3" async></script>
 
-##### Memory leak
+### Memory leak
 
 The code below is allocating memory twice but it only frees the memory once.
 
@@ -95,7 +97,7 @@ clang++-3.8 -fsanitize=address -g -o leak leak.cpp
 When you run the previously generated executable you will get something similar to the following:
 <script type="text/javascript" src="https://asciinema.org/a/91kmpmy03843ccdbbh04ptbdd.js" id="asciicast-91kmpmy03843ccdbbh04ptbdd" async></script>
 
-##### Double free
+### Double free
 
 The code below is allocating memory once but it is freeing it twice.
 
@@ -118,9 +120,9 @@ clang++-3.8 -fsanitize=address -g -o double_free double_free.cpp
 When you run the previously generated executable you will get something similar to the following:
 <script type="text/javascript" src="https://asciinema.org/a/ebgp9ox48e8ffdaf0iug0b37s.js" id="asciicast-ebgp9ox48e8ffdaf0iug0b37s" async></script>
 
-#### ThreadSanitizer
+## ThreadSanitizer
 
-##### Data race
+### Data race
 
 The code below has a data race due to having two threads modifying the same global variable.
 
@@ -161,9 +163,9 @@ clang++-3.8 -fsanitize=thread -g -lpthread -o race race.cpp
 When you run the previously generated executable you will get something similar to the following:
 <script type="text/javascript" src="https://asciinema.org/a/5go47caz8s1t6mdsaexb10ecx.js" id="asciicast-5go47caz8s1t6mdsaexb10ecx" async></script>
 
-#### MemorySanitizer
+## MemorySanitizer
 
-##### Uninitialized values
+### Uninitialized values
 
 The code below is reading the value stored in an array that has not been initialized.
 
@@ -184,9 +186,9 @@ clang++-3.8 -fsanitize=memory -g -o memory memory.cpp
 When you run the previously generated executable you will get something similar to the following:
 <script type="text/javascript" src="https://asciinema.org/a/enrqyt3iue9lvmixapugzljge.js" id="asciicast-enrqyt3iue9lvmixapugzljge" async></script>
 
-#### UndefinedBehaviorSanitizer
+## UndefinedBehaviorSanitizer
 
-##### Function not returning a value
+### Function not returning a value
 
 The code below contains a function that must return an integer, but it does not.
 
@@ -214,6 +216,6 @@ When you run the previously generated executable you will get something similar 
 <script type="text/javascript" src="https://asciinema.org/a/bqcprr20fga4yrdyq69vs3aek.js" id="asciicast-bqcprr20fga4yrdyq69vs3aek" async></script>
 
 
-### Conclusion
+## Conclusion
 
 Using these tools to compile your code **to run your tests (integration test, smoke test, system test, etc) helps you catch plenty of problems**. The downside is that you **cannot use two sanitizers at the same time** (except **AddressSanitizer** and **LeakSanitizer**). Therefore, you need multiple binaries to test your code with all these sanitizers, but the payoff is worth it.

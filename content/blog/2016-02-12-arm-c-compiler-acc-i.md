@@ -6,21 +6,23 @@ tags = ["ARM", "C"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **Why do you want to create your own compiler?** To answer this question I have to give you some background. For Christmas I got a **BeagleBone Black**, perfect to **learn ARM assembly**. After a few weeks of doing the usual stuff I decided I wanted a bigger project to improve my knowledge. However, the idea to start the **development of a compiler** comes from [http://www.sigbus.info/how-i-wrote-a-self-hosting-c-compiler-in-40-days.html](http://www.sigbus.info/how-i-wrote-a-self-hosting-c-compiler-in-40-days.html).
 
 **The only aim of this project is to improve my knowledge of the ARM assembly, the C language and Compilers**. The project can be found in [GitHub](https://github.com/maitesin/acc).
 
-### What is the target of the project?
+## What is the target of the project?
 
 My target is to have a **self-hosting compiler of C**. For this reason I want to **keep it simple**. Moreover, I will only develop the features I need to accomplish the target of the project. As you can imagine the choosen language is C (ANSI C to be specific).
 
 I decided **not to use Flex, Bison, Lex or Yacc** because I want to work in all stages of the compiler. Yes, it sounds crazy and maybe I will regret it in the future, but at least I will try it.
 
-### What is the current state of the project?
+## What is the current state of the project?
 
 Currently, I have implemented a **very basic compiler**, this version is available in [GitHub as v0.1](https://github.com/maitesin/acc/tree/v0.1). *It just generates code for a file containing the main function without parameters and the body only contains a return statement of a positive integer*.
 
-#### Structure of the project
+### Structure of the project
 
 The project contains three folders:
 
@@ -30,7 +32,7 @@ The project contains three folders:
 
 This compiler is made of a **Lexer** that creates **Tokens**. These **Tokens** are used by the **Grammar** to create **AST nodes**. Finally, the **AST nodes** will be used by the **Generator** to generate the assembly.
 
-##### Lexer and Tokens
+#### Lexer and Tokens
 
 The available **Tokens** are: *int_value*, *int_type*, *function*, *open_parenthesis*, *close_parenthesis*, *open_bracket*, *close_bracket*, *return*, *semicolon* and *end_of_file*. These can be found in the file *tokens.h*:
 
@@ -165,7 +167,7 @@ struct token_base * next(lexer * l);
 #endif //LEXER_H
 ```
 
-##### Grammar and AST nodes
+#### Grammar and AST nodes
 
 The available **AST nodes** are: *id*, *int*, *function* and *return*. These can be found in the file *ast.h*:
 
@@ -262,7 +264,7 @@ ast_base * read_function_body(grammar * g);
 #endif //GRAMMAR_H
 ```
 
-##### Generation of assembly
+#### Generation of assembly
 
 The **Generator** has a **Grammar** that will be used to generate the assembly with the method *generate_code*:
 
@@ -294,7 +296,7 @@ void __generate_code_for_int(generator * g, node_int * ast);
 #endif //GENERATOR_H
 ```
 
-### Example of the current functionality
+## Example of the current functionality
 
 The code to be compiled into ARM assembly is:
 
@@ -335,6 +337,6 @@ $ echo $?
 2
 ```
 
-### Future
+## Future
 
 As you can see this project is going to take a long time to be completed. My plan is to work adding small features at a time. The next step is to add **conditionals (if and else)**. Afterwards, I will add **operators such as <, <=, >, >=, == and !=**. **Everytime I achieve a new goal in this project I will create a post like this one to show the feature and how it has been implemented**.

@@ -6,18 +6,20 @@ tags = ["C++", "C++11", "C++14", "C++17", "Lambda"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 In this post I talk about what has been added in the **C++ standard** regarding **lambda expressions** since they were introduced in **C++11**.
 
 **All the code and configuration files used in this post are available in this
 [repo](https://github.com/maitesin/blog/tree/master/lambda_comparison_2016_05_14) in GitHub.**
 
-### What is a lambda expression?
+## What is a lambda expression?
 
 A **lambda expression** is a simplified notation for defining and using an anonymous function object. Instead of defining a named class with an *operator()*, later making an object of that class and finally invoking it.[^1]
 
 I do not explain all the options for capturing or specifying return types. There is plenty of material regarding these topics. I focus on what has been introduced in **C++14** and what will be introduced in **C++17**.
 
-### Basics of the lambda expression
+## Basics of the lambda expression
 
 The following is the smallest **lambda expression** with its three parts:
 
@@ -89,7 +91,7 @@ The result of the execution of the previous code is:
 2
 ```
 
-### What has been added in C++14
+## What has been added in C++14
 
 In **C++14** two new features were added to **lambda expressions**:
 
@@ -138,7 +140,7 @@ Float: 1
 Integer: 0
 ```
 
-### What will be added in C++17
+## What will be added in C++17
 
 The current plan is to add two new features for **lambda expressions** in **C++17**:
 

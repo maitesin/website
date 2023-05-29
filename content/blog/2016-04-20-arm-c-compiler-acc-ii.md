@@ -6,23 +6,25 @@ tags = ["ARM", "C"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 I am working on a pet project to create a **C compiler for the ARM architecture**. You can find more information about this topic in my previous post [ARM C Compiler (ACC) - Basic Compiler I](http://maitesin.github.io//ARM-C-Compiler_ACC_basic_compiler/).
 
 The source code of this project can be found in [GitHub](https://github.com/maitesin/acc).
 
-### What is the current state of the project?
+## What is the current state of the project?
 
 Currently, I have implemented a **very basic compiler**, this version is available in [GitHub as v0.2](https://github.com/maitesin/acc/tree/v0.2). *Basic compiler able to handle a single file with a main function (without parameters) and if/else statements with simple boolean expressions and return statements of a positive integer*.
 
-#### What has been added or modified since the last post?
+## What has been added or modified since the last post?
 
 The difference between both versions can be found in the following link [diff v0.1 v0.2](https://github.com/maitesin/acc/compare/v0.1...v0.2).
 
-##### Unit tests
+### Unit tests
 
 In the previous version only **unit tests** were available for the **Lexer**, but in this new version some **unit tests** for the **Lexer** have been added and **unit tests** for the **Grammar** have been created. In total, **there are 27 (26 new) unit tests for Lexer and 12 unit tests for Grammar**.
 
-##### Lexer and Tokens
+### Lexer and Tokens
 
 There are new **Tokens** for **if**, **else** and **boolean operators**. **Lexer** now supports all these new tokens and it has a new feature (a **stack**) that allows the **Grammar** to give a **Token** back to **Lexer**. **That is useful when you are reading a boolean expression, but you do not know if it will be a binary or unary expression**. Then in case you try to check if it is a binary expression and it is not, you give back that token to the **Lexer** and try with the unary expression. Moreover, the **Lexer** now receives a buffer with the content of the file loaded instead of a file. This is to make it easier to create **unit tests**.
 
@@ -104,7 +106,7 @@ struct token_base * next(lexer * l)
 ...
 ```
 
-##### Grammar and AST nodes
+### Grammar and AST nodes
 
 The most important features added to the **AST** is the addition of **node_if**, **node_boolean_operator** and **enum boolean_operator_type**. In addition to this, now the base of the **AST** holds a pointer to the next **AST** node. **That is to hold the whole information contained in the body of a function or an if statement**.
 
@@ -205,7 +207,7 @@ ast_base * read_boolean_expression(grammar * g)
 }
 ```
 
-##### Assembly Generator
+### Assembly Generator
 
 The **Generator** of the ARM assembly has new methods to handle all the new **AST** structures and behaviours. **It has some limitations regarding boolean expressions in which I have to do further research**. Some pieces of the **Generator** are the following:
 
@@ -238,7 +240,7 @@ void __generate_code_for_if(generator * g, node_if * ast)
 }
 ```
 
-### Example of the current functionality
+## Example of the current functionality
 
 The code to be compiled into ARM assembly is:
 ``` c
@@ -297,11 +299,11 @@ gcc example.s -o example
 Execute and check the result:
 
 ``` bash
-$ ./example 
+$ ./example
 $ echo $?
 2
 ```
 
-### Future
+## Future
 
 The next step will be to actually be able to generate any possible boolean expression. Currently, the **AST** can recognise complex boolean expressions, but the **Generator** is not able to handle them. I have to study and research more about this topic in the **ARM** architecture. After that, **I plan on adding variables (integers)**.

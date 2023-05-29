@@ -6,6 +6,8 @@ tags = ["C", "Kernel Module", "Linux"]
 categories = ["Operating Systems"]
 +++
 
+## Introduction
+
 **NOTE: The code used to replace the user's path with the one provided is BAD, never change user's pointer content unless he/she is expecting that to happen. Don't do that at home kids**
 
 I decided to explain the basics of a **Linux Kernel Module** with humor. I am not saying this is a good idea for April's fool, but it is quite close ;)
@@ -14,7 +16,7 @@ This module shares some ideas with the post about [LD_PRELOAD](http://maitesin.g
 
 As always, **all the code used in this post is available in this [repo](https://github.com/maitesin/blog/tree/master/rickroll_module_2016_03_19)**.
 
-### Skeleton of a Linux Kernel Module
+## Skeleton of a Linux Kernel Module
 
 The following code is the skeleton of a **Linux Kernel Module**
 
@@ -42,11 +44,11 @@ module_exit(my_exit);
 
 I think the code above is quite self-explanatory.
 
-### What does this Module do?
+## What does this Module do?
 
 As said before, this module is aimed to replace the current open syscall by ours, that will detect if the file we are trying to open is an mp3 or a jpg file and it will substitute the files by the ones provided when the module is loaded.
 
-#### Code explained
+### Code explained
 
 This could seem a bit overwhelming, but let's go through it.
 
@@ -178,9 +180,9 @@ static void __exit unset_rick(void)
 
 **Note: the *sys_call_table* is in read-only mode by default. To be able to write on it, the kernel running must have been compiled with the flag *CONFIG_DEBUG_RODATA* not set.**
 
-### Example of how it works
+## Example of how it works
 <iframe width="560" height="315" src="https://www.youtube.com/embed/efEZZZf_nTc" frameborder="0" allowfullscreen></iframe>
 
-### Conclusion
+## Conclusion
 
 This is a great and funny example of the power of the **Linux Kernel Modules**. I will write about more advanced examples in the future. Moreover, I will keep on trying to get a patch accepted in the main tree :D

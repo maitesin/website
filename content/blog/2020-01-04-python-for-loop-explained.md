@@ -6,6 +6,8 @@ tags = ["Python", "For", "Loop"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **Have you ever thought about how the *for loop* is implemented in Python?** I always thought it would iterate over all elements in the sequence, like it does, but that first it would query the sequence to know its length and then request that many elements. **Turns out, it does not work like that.**
 
 ```python

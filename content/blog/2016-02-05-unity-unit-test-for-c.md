@@ -6,12 +6,14 @@ tags = ["C", "Unity", "Unit Test"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **Unity** is one of the available frameworks to create **unit tests** for C. In this example, I will use **CMake** to configure the project and build.
 
 **All the code and configuration files used in this post are available in this
 [repo](https://github.com/maitesin/blog/tree/master/unity_c_unit_test_2016_02_05) in GitHub.**
 
-### Can you do unit test in C? And what is Unity?
+## Can you do unit test in C? And what is Unity?
 
 **Some people do not know you can do unit tests in C** and people must do **unit tests** in any language. My choice to do **unit tests** in C is **Unity** for several reasons:
 
@@ -19,7 +21,7 @@ categories = ["Development"]
  * Great documentation and examples in the [repo](https://github.com/ThrowTheSwitch/Unity) and their [website](http://www.throwtheswitch.org/).
  * Awesome course about **unit test** in **embedded systems** on [Udemy](https://www.udemy.com/unit-testing-and-other-embedded-software-catalysts/). I did it myself, totally worth it if you are interested in these topics.
 
-### Structure of the project
+## Structure of the project
 
 In the root of the project we have the **CMakeLists.txt** file and three folders: *lib*, *src* and *unittest*.
 
@@ -42,7 +44,7 @@ functions.h
 test_functions.c
 ```
 
-### The project to test
+## The project to test
 
 The configuration will be done in the **CMakeLists.txt** file:
 
@@ -91,6 +93,6 @@ int main(void)
 
 As you can see in the code above, you need a main in the **unit test** file that contains: *UNITY_BEGIN* and *UNITY_END* calls and a *RUN_TEST* call for each test we want to run.
 
-### Conclusion
+## Conclusion
 
 **Everybody should be doing unit tests, it does not matter what language do they use**. I do use this framework among others (that I will introduce in future posts) for testing C applications. **Unity** is a must have tool for any C developer, **even for embedded software**. You can check it in their website and course.

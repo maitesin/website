@@ -6,15 +6,17 @@ tags = ["Go"]
 categories = ["Opinion"]
 +++
 
+## Introduction
+
 There is plenty of meterials such as talks, tutorials and posts talking about **Go**, but I want to give my opinion about what I think are the strenghts and weaknesses of **Go**.
 
 **Full disclosure**: *I do not use **Go** at work. I use **Go** in my personal projects. Therefore, **take my opinions with a grain of salt.***
 
-### Pros
+## Pros
 
 **Go** is one of the best programming languages I have seen in my whole life. I think that because of the following characteristics.
 
-#### Standard library
+### Standard library
 
 If you ever asked me "Which programming language has the best and more complete standard library?" before trying **Go** I would have answered **Python**. Nowadays, I would answer **Go** has the best and more complete standard library.
 
@@ -33,7 +35,7 @@ To back up my statement that **Go** has the best and more complete standard libr
 
 Obviously that is no the only content of the standard library, but these were the packages that I found to be the more interesting.
 
-#### Unit test and benchmarking
+### Unit test and benchmarking
 
 I really love the idea of the compiler of the language having the ability to run the **unit testing** and the **benchmarking** in such a simple way.
 
@@ -67,48 +69,48 @@ Finally, you can limit the amount of time the **benchmark** is running:
 go test -bench=. -benchtime=20s
 ```
 
-#### Channels
+### Channels
 
 This is one of the big features of **Go**. If you ever used a **Unix** system, this feature will remind you of **pipes**. This is because a **channel** is used to send data between a reader and a writer (usually **Goroutines**).
 
 There is plenty of good documentation about **channels** in [**Go** by Example](https://gobyexample.com/channels) and in [A Tour of **Go**](https://tour.golang.org/concurrency/2). So, there is no need for me to write examples. 
 
-### Cons
+## Cons
 
 Not everything is perfect in **Go**. There are some perks that once they are fixed will make **Go** an even better programming language.
 
-#### Build system
+### Build system
 
 One of the main flaws of **Go** is the lack of a standard **build system**. I can understand that older languages such as **C** or **C++** do not have a standard **build system**. Newer languages usually have a **build system**, not always from the beginning, such as **Python** or the more recent **Rust**.
 
 Getting a standard **build system** for **Go** would be a great advantage. Maybe for **Go** 2.0.
 
-#### Different versions of the compiler
+### Different versions of the compiler
 
 This issue is not my biggest concern, but it is something that could be problematic for some people. The main problem is having to change the environment variables ***$GOROOT*** and ***$GOPATH***. In **Python**, I can choose to use **Python2** or **Python3** calling different executables. The same for **C** and **C++**, I can call different versions of the compiler because they can coexist in the filesystem.
 
-### Other
+## Other
 
 In this section I talk about some features of **Go** that **are both a Pro and a Con**.
 
-#### Runtime
+### Runtime
 
 Since I come from a systems programming background, I find hard to like a programming language that has a runtime. Unless such **programming language brings more to the table to compensate for the runtime**, I will try to avoid using it. 
 
 **Go is one of the few languages that actually brings cool features in its runtime** like detection of concurrency problems such as **deadlocks**.
 
-#### Generics
+### Generics
 
 The lack of generics in the **Go** language may make some people doubt the usefulness of the language, however, I do not mind not having generics. It could be because I have not yet created a big project using **Go**, so I have not needed them.
 
 Maybe in **Go** 2.0 they will introduce some feature to address this perk. Nevertheless, I am not confident using this argument against **Go**. I have used **C** for long time and I never felt the need for generics. Therefore, I can live with a language that does not have them.
 
-#### Goroutines
+### Goroutines
 
 This is another of the big features of **Go** and some **people will be surprised of it not being a Pro in this post**. Don't get me wrong, I think **Goroutines** are awesome, but you need the **runtime** to make them work.
 
 That is because **Goroutines do not use the thread system provided by the operating system**. It uses its own implementation of thread. And all that dependency, locality, lifetime, etc. of the thread is handled by the runtime.
 
-### Conclusion
+## Conclusion
 
 I think **Go is already a great language**, even with the small **Cons** I talk about in this post. Once the people in charge of the language fix this perks, **Go** will become an even better language. **Go** is a mature language with an awesome **standard library** and great tools. **I will not be surprised if Go starts replacing Python in some niches even before Go gets a standard build system.**
