@@ -57,7 +57,9 @@ Some parts to note in the code are the following:
 
 #### Execution
 
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/0i676ob9b1btu4bosdno69d1d.js" id="asciicast-0i676ob9b1btu4bosdno69d1d" async></script>
+{{< /rawhtml >}}
 
 ### Two threads
 
@@ -95,7 +97,9 @@ int main()
 As you can see above once the code is able to hold a thread, it is quite easy to make it hold two. However, **now we have two result variables and two calls to the method join**. As you can see it is not really easy to keep track once you have several **threads**.
 
 #### Execution
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/4xl3gxqtgch0cx4cmjuym6kkq.js" id="asciicast-4xl3gxqtgch0cx4cmjuym6kkq" async></script>
+{{< /rawhtml >}}
 
 ## Future
 
@@ -134,7 +138,9 @@ Some changes compared to the **thread** version:
 * **Future** is gotten from the *async* function. This is really similar to how the **threads** are created.
 
 #### Execution
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/9tk2efdt4dbbf1wesc4oo3bue.js" id="asciicast-9tk2efdt4dbbf1wesc4oo3bue" async></script>
+{{< /rawhtml >}}
 
 ### Two futures
 
@@ -168,7 +174,9 @@ int main()
 **This time the execution of two tasks in separate threads is way cleaner**.
 
 #### Execution
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/bzll7syk13m2yas2nf3p3exrg.js" id="asciicast-bzll7syk13m2yas2nf3p3exrg" async></script>
+{{< /rawhtml >}}
 
 
 ## Promise
@@ -220,7 +228,9 @@ Some key points from the example:
 * Finally, the method *join* from the **thread** is called in order to wait for it to finish the execution of the function *accum_up_to*.
 
 #### Execution
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/6so6sj02g30yns7rqmc5rr9zp.js" id="asciicast-6so6sj02g30yns7rqmc5rr9zp" async></script>
+{{< /rawhtml >}}
 In this execution something called **data race** is shown. That can be seen because the execution of the same program can generate different outputs (even if the result value is always the same).
 
 ## Conclusion

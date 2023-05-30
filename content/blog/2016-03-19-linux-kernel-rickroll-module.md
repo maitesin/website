@@ -181,7 +181,11 @@ static void __exit unset_rick(void)
 **Note: the *sys_call_table* is in read-only mode by default. To be able to write on it, the kernel running must have been compiled with the flag *CONFIG_DEBUG_RODATA* not set.**
 
 ## Example of how it works
+{{< rawhtml >}}
+<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/efEZZZf_nTc" frameborder="0" allowfullscreen></iframe>
+</center>
+{{< /rawhtml >}}
 
 ## Conclusion
 

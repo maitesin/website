@@ -51,7 +51,10 @@ clang++-3.8 -fsanitize=address -g -o free free.cpp
 ```
 
 When you run the previously generated executable you will get something similar to the following:
+
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/3zcpyg71hz6sxnhhxru7pvgtj.js" id="asciicast-3zcpyg71hz6sxnhhxru7pvgtj" async></script>
+{{< /rawhtml >}}
 
 ### Buffer overflow
 
@@ -72,7 +75,9 @@ clang++-3.8 -fsanitize=address -g -o overflow overflow.cpp
 ```
 
 When you run the previously generated executable you will get something similar to the following:
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/c0338bklzn84ptgafgaj4kas3.js" id="asciicast-c0338bklzn84ptgafgaj4kas3" async></script>
+{{< /rawhtml >}}
 
 ### Memory leak
 
@@ -95,7 +100,9 @@ clang++-3.8 -fsanitize=address -g -o leak leak.cpp
 ```
 
 When you run the previously generated executable you will get something similar to the following:
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/91kmpmy03843ccdbbh04ptbdd.js" id="asciicast-91kmpmy03843ccdbbh04ptbdd" async></script>
+{{< /rawhtml >}}
 
 ### Double free
 
@@ -118,7 +125,9 @@ clang++-3.8 -fsanitize=address -g -o double_free double_free.cpp
 ```
 
 When you run the previously generated executable you will get something similar to the following:
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/ebgp9ox48e8ffdaf0iug0b37s.js" id="asciicast-ebgp9ox48e8ffdaf0iug0b37s" async></script>
+{{< /rawhtml >}}
 
 ## ThreadSanitizer
 
@@ -161,7 +170,9 @@ clang++-3.8 -fsanitize=thread -g -lpthread -o race race.cpp
 ```
 
 When you run the previously generated executable you will get something similar to the following:
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/5go47caz8s1t6mdsaexb10ecx.js" id="asciicast-5go47caz8s1t6mdsaexb10ecx" async></script>
+{{< /rawhtml >}}
 
 ## MemorySanitizer
 
@@ -184,7 +195,9 @@ clang++-3.8 -fsanitize=memory -g -o memory memory.cpp
 ```
 
 When you run the previously generated executable you will get something similar to the following:
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/enrqyt3iue9lvmixapugzljge.js" id="asciicast-enrqyt3iue9lvmixapugzljge" async></script>
+{{< /rawhtml >}}
 
 ## UndefinedBehaviorSanitizer
 
@@ -213,7 +226,9 @@ clang++-3.8 -fsanitize=undefined -g -o function function.cpp
 ```
 
 When you run the previously generated executable you will get something similar to the following:
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/bqcprr20fga4yrdyq69vs3aek.js" id="asciicast-bqcprr20fga4yrdyq69vs3aek" async></script>
+{{< /rawhtml >}}
 
 
 ## Conclusion

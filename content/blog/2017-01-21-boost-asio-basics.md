@@ -54,8 +54,9 @@ The code is quite straightforward, it provides 6 tasks to the **IO Service** and
 #### Execution
 
 The output of the previous code is what everybody can expect.
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/1bwz66y6imztewkt2kriaqnjh.js" id="asciicast-1bwz66y6imztewkt2kriaqnjh" async></script>
-
+{{< /rawhtml >}}
 ### Two workers
 
 The code for the two workers is a bit more complicated. The idea is the same, but with two threads executing tasks instead of one.
@@ -94,7 +95,10 @@ The complexity of the previous code is the usage of threads, but it is not overw
 #### Execution
 
 The output of the *two workers* code can be the same as from the *one worker* section. However, it is not guaranteed that it would be the same. This can be seen in the following execution:
+
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/da8dspoce5ud1k1a49rm9qlzm.js" id="asciicast-da8dspoce5ud1k1a49rm9qlzm" async></script>
+{{< /rawhtml >}}
 
 ## Synchronous
 
@@ -300,7 +304,9 @@ The last interesting part of the code is the *read a message*. In this case, it 
 
 #### Execution
 
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/10bf5yr6qyuqh5oxm2ru65qlr.js" id="asciicast-10bf5yr6qyuqh5oxm2ru65qlr" async></script>
+{{< /rawhtml >}}
 
 ## Conclusion
 

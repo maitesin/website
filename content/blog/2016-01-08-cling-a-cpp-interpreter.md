@@ -45,8 +45,9 @@ bool is_greater(int a, int b) {
 ```
 
 The header above can be used from Cling as shown in the following video:
-<script type="text/javascript" src="https://asciinema.org/a/0tlo8e6kltl1lvqcrm8vz6pxr.js"
-id="asciicast-0tlo8e6kltl1lvqcrm8vz6pxr" async></script>
+{{< rawhtml >}}
+<script type="text/javascript" src="https://asciinema.org/a/0tlo8e6kltl1lvqcrm8vz6pxr.js" id="asciicast-0tlo8e6kltl1lvqcrm8vz6pxr" async></script>
+{{< /rawhtml >}}
 
 ### Include a folder and load a template class from that folder
 
@@ -79,14 +80,16 @@ T MyClass<T>::dec() {
 ```
 
 The class above can be loaded from Cling as shown in the following video:
-<script type="text/javascript" src="https://asciinema.org/a/6dn649p755qhet4dr854vsclz.js"
-id="asciicast-6dn649p755qhet4dr854vsclz" async></script>
+{{< rawhtml >}}
+<script type="text/javascript" src="https://asciinema.org/a/6dn649p755qhet4dr854vsclz.js" id="asciicast-6dn649p755qhet4dr854vsclz" async></script>
+{{< /rawhtml >}}
 
 ### Write a function on-the-fly
 
 Cling allows us to write functions or classes on-the-fly:
-<script type="text/javascript" src="https://asciinema.org/a/82i6wmeyjiyd2j6ohlhum0zm9.js"
-id="asciicast-82i6wmeyjiyd2j6ohlhum0zm9" async></script>
+{{< rawhtml >}}
+<script type="text/javascript" src="https://asciinema.org/a/82i6wmeyjiyd2j6ohlhum0zm9.js" id="asciicast-82i6wmeyjiyd2j6ohlhum0zm9" async></script>
+{{< /rawhtml >}}
 
 ## Conclusion
 

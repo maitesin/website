@@ -78,14 +78,16 @@ gcc main.c -g -o app
 ### Record of the execution
 
 In the following video it will be shown how to record the execution of an application.
-<script type="text/javascript" src="https://asciinema.org/a/5m0lpbkqj6xyl9fy0ath9tnjd.js"
-id="asciicast-5m0lpbkqj6xyl9fy0ath9tnjd" async></script>
+{{< rawhtml >}}
+<script type="text/javascript" src="https://asciinema.org/a/5m0lpbkqj6xyl9fy0ath9tnjd.js" id="asciicast-5m0lpbkqj6xyl9fy0ath9tnjd" async></script>
+{{< /rawhtml >}}
 
 ### Replay of the execution
 
 In the folowwing video it will be shown how to replay the execution of an application.
-<script type="text/javascript" src="https://asciinema.org/a/cpzdimjm3v3ghownpynzey1bu.js"
-id="asciicast-cpzdimjm3v3ghownpynzey1bu" async></script>
+{{< rawhtml >}}
+<script type="text/javascript" src="https://asciinema.org/a/cpzdimjm3v3ghownpynzey1bu.js" id="asciicast-cpzdimjm3v3ghownpynzey1bu" async></script>
+{{< /rawhtml >}}
 
 ## Conclusion
 

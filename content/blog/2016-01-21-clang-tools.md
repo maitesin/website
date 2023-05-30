@@ -21,7 +21,9 @@ The videos are made with **[asciinema](https://asciinema.org/)**, that means **y
 This tool is **perfect to make sure that you are following a specific code style** and it is fully configurable.
 
 It can integrated in your editor or IDE. In my case, I have it integrated in my Vim configuration. You can see how it works in the following video:
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/eas94n9bjs27c35xuix875xum.js" id="asciicast-eas94n9bjs27c35xuix875xum" async></script>
+{{< /rawhtml >}}
 
 Or it can be used from the command line. The original state of the code is:
 
@@ -74,7 +76,9 @@ Use -header-filter='.*' to display errors from all non-system headers.
 ```
 
 You can deal on your own with these problems, or let it fix them for you using the *-fix* flag.
+{{< rawhtml >}}
 <script type="text/javascript" src="https://asciinema.org/a/def6c40kpd94p12i6e207gd4m.js" id="asciicast-def6c40kpd94p12i6e207gd4m" async></script>
+{{< /rawhtml >}}
 
 ## Clang-modernize
 
