@@ -15,7 +15,9 @@ Before we start, I want to define a couple of terms:
 
 Arguably these are the four most important sorting algorithms, **Quicksort**, **Merge Sort**, **Heapsort** and **Insertion Sort**.
 
+{{< rawhtml >}}
 <center>
+{{< /rawhtml >}}
 
 | Algorithm | Best Time | Average Time | Worst Time | Space | Stable |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -24,7 +26,9 @@ Arguably these are the four most important sorting algorithms, **Quicksort**, **
 | Heapsort | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(n log n)</span> | <span style="color:green">O(1)</span> | <span style="color:red">No</span> |
 | Insertion Sort | <span style="color:green">O(n)</span> | <span style="color:red">O(n^2)</span> | <span style="color:red">O(n^2)</span> | <span style="color:green">O(1)</span> | <span style="color:green">Yes</span> |
 
+{{< rawhtml >}}
 </center>
+{{< /rawhtml >}}
 
 ## Quicksort
 **Quicksort is the fastest one of the lot**, as its constants are smaller than the others. The best case scenario *O(n log n)* happens when **the data to be sorted is not already sorted or all their values are the same**. Another of its strong points is that it is **in place**, however, it is **not stable**.
@@ -32,11 +36,15 @@ Arguably these are the four most important sorting algorithms, **Quicksort**, **
 ### How does it works?
 Given an input array a pivot element needs to be selected (a simple approach is to select the first element in the array). Then, you have to swap elements in the array to leave all smaller elements than the pivot in the left side of the pivot, and the elements equal or greater than the pivot in the right hand side of it. **This will leave the pivot in its sorted place in the array**. Now repeat the same process with the two arrays (left and right) from the pivot until the length of the remaining arrays is less than 2.
 
+{{< rawhtml >}}
 <center>
 <div style="width:28%">
+{{< /rawhtml >}}
 ![](/img/blog/sorting/quicksort.svg)
+{{< rawhtml >}}
 </div>
 </center>
+{{< /rawhtml >}}
 
 ### Optimizations
 The are two main problems with the **quicksort** algorithm that can make it run at the worst performance. In both cases, the array is always split at the beginning of it, having to do the same operation over the whole array over and over instead of having it split in about half:
@@ -53,11 +61,15 @@ Since **quicksort is the fastest** of the sorting algorithms it's the most commo
 ### How does it works?
 Given an input array it gets split in half over and over until the length of the remaining arrays is less than 2. At that point, all these arrays are sorted, now we just need to merge these arrays, but keeping them sorted.
 
+{{< rawhtml >}}
 <center>
 <div style="width:40%">
+{{< /rawhtml >}}
 ![](/img/blog/sorting/mergesort.svg)
+{{< rawhtml >}}
 </div>
 </center>
+{{< /rawhtml >}}
 
 ### Optimizations
 Since **merge sort** is a really consistent algorithm, the main optimizations have been focused on lowering the constants of its performance and making it work **in place**. The most notable optimizations are that an **in place merge sort** and **merge sort is highly parallelizable**, this means that it can be run in multiple cores, or even distributed among several machines.
@@ -73,11 +85,15 @@ Because of the consistent performance of the **merge sort**, being **stable** an
 ### How does it works?
 Given an input array, first of all an algorithm known as **heapify**, with cost *O(n)*, must be applied to it. This leaves the array ready to be used as a **max-heap**. At this point, the only thing left to do is extracting the *n* elements in the heap. This has a cost of *O(log n)* per element extracted, giving it a total cost of *O(n log n)*.
 
+{{< rawhtml >}}
 <center>
 <div style="width:30%">
+{{< /rawhtml >}}
 ![](/img/blog/sorting/heapsort.svg)
+{{< rawhtml >}}
 </div>
 </center>
+{{< /rawhtml >}}
 
 ### Optimizations
 **Heapsort** does not have any optimizations that stand up or that give a clear improvement against the basic implementation.
@@ -91,11 +107,15 @@ Given an input array, first of all an algorithm known as **heapify**, with cost 
 ### How does it works?
 **Insertion sort** leaves the already sorted elements to the left of the array and the unsorted elements to the right. Hence, it first sorts the first element of the array, then it sorts the second element of the array, and so on and so forth until every element of the arrray has been sorted.
 
+{{< rawhtml >}}
 <center>
 <div style="width:30%">
+{{< /rawhtml >}}
 ![](/img/blog/sorting/insertsort.svg)
+{{< rawhtml >}}
 </div>
 </center>
+{{< /rawhtml >}}
 
 ### Optimizations
 **Insertion sort** does not have any optimizations that stand up or that give a clear improvement against the basic implementation.
