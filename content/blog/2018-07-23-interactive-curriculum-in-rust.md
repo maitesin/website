@@ -6,11 +6,13 @@ tags = ["Curriculum", "Docker", "Rust"]
 categories = ["Development"]
 +++
 
+## Introduction
+
 **As we all know the process of looking for a job is hard. And you have to stand out from the crowd**. Therefore, when I saw [s0ulshake's CV](https://github.com/soulshake/cv.soulshake.net) I wanted to do something similar, but with other technologies (you know I do not know JavaScript) and add the ability to move forward and backward.
 
 I decided to code it in **Rust** because I have been looking for an excuse to start using it and this was as good as any other excuse :D. The way to distribute the binary is using **Docker**.
 
-#### How to run my CV application
+## How to run my CV application
 
 In order to run my CV application you just have to run
 
