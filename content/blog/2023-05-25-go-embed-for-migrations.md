@@ -7,6 +7,10 @@ categories = ["Development", "Database", "Migration"]
 draft = false
 +++
 
+## Introduction
+
+//TODO: A bit of introduction for what the post wants to accomplish.
+
 ## What is embed?
 
 [Go Embed](https://pkg.go.dev/embed) was introduced in [Go 1.16](https://tip.golang.org/doc/go1.16#library-embed) as a core library that allows binaries to contain external files embedded and they are accessible from inside the binary.
