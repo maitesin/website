@@ -23,6 +23,24 @@ There are multiple way to benefit from this amazing feature, from packing your w
 
 [Go-Migrate](https://github.com/golang-migrate/migrate) is a library to handle all aspects of DB migrations in Go. It is both a [CLI tool](https://github.com/golang-migrate/migrate#cli-usage), and a [library](https://github.com/golang-migrate/migrate#use-in-your-go-project).
 
+### Go-Migrate CLI tool
+
+#### Install
+
+```bash
+$ go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+go: downloading github.com/golang-migrate/migrate v3.5.4+incompatible
+go: downloading github.com/lib/pq v1.10.0
+```
+
+#### Create new migration
+
+```bash
+$ migrate create -ext sql -dir migrations -seq create_example_table
+/home/maitesin/dev/blog/2023_go_embed_for_migrations/migrations/000001_create_example_table.up.sql
+/home/maitesin/dev/blog/2023_go_embed_for_migrations/migrations/000001_create_example_table.down.sql
+```
+
 ## Go-Migrate with Go Embed
 
 The following source code shows how Go-Migrate can use the embedded migrations in the binary.
@@ -75,6 +93,14 @@ func main() {
 	// Here goes your awesome code to get rich :D
 }
 ```
+
+### Extra setup
+
+#### Docker for Postgres
+
+#### Migration files
+
+### Execution
 
 ## Links
 
