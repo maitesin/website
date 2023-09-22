@@ -9,7 +9,7 @@ draft = false
 
 ## Introduction
 
-//TODO: A bit of introduction for what the post wants to accomplish.
+In this post we will explore an example of Go binary that combines several features available in order to have a self-contained binary that runs the appropriate migrations before starting any actual work.
 
 ## What is embed?
 
@@ -17,7 +17,7 @@ draft = false
 
 There are multiple way to benefit from this amazing feature, from packing your whole webapp with all its assets, to have binaries containing their DB migrations to always have the correct DB schema to interact with it.
 
-*Note: I do not recommend to serve all webapp assets from the binary for webapps with high traffic load. Using Nginx, or a CDN would be way better.*
+*Note: I do not recommend to serve all webapp assets from the binary for webapps with high traffic load. Using Nginx, or a CDN would be a better way to do it.*
 
 ## Go-Migrate to run migrations
 
@@ -96,11 +96,70 @@ func main() {
 
 ### Extra setup
 
+Obviously you will need a DB, PostgreSQL in this example, to connect to in order to run the migrations. And the migration files to be placed in the correct location for the go binary to find them.
+
+For the example used in this post we have the following filesystem hierarchy:
+
+```bash
+.
+├── docker-compose.yml
+├── go.mod
+├── go.sum
+├── main.go
+└── migrations
+    ├── 000001_create_examples_table.down.sql
+    └── 000001_create_examples_table.up.sql
+```
+
 #### Docker for Postgres
+
+When I am developing I tend to work with a DB locally running inside Docker. So, for this example I have used the same approach. The following is the dockerfile that sets the PostgreSQL instance up.
+
+Please note that there is no entry point set up for it in order to do a migration. Since the migration will be done completely from the Go binary.
+
+```dockerfile
+version: "3"
+
+services:
+  db:
+    image: postgres:${POSTGRES_VERSION:-15}
+    environment:
+      POSTGRES_USER: ${DB_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-examples}
+    ports:
+      - "${DB_HOST:-127.0.0.1}:${DB_PORT:-54321}:5432"
+    command: ["postgres", "-c", "log_statement=all"]
+```
 
 #### Migration files
 
+The migration file to create the `examples` table is:
+
+```sql
+CREATE TABLE IF NOT EXISTS examples(
+   id serial PRIMARY KEY,
+   name VARCHAR (50) UNIQUE NOT NULL
+);
+```
+
+The rollback file to revert the creation of the `examples` table is:
+
+```sql
+DROP TABLE IF EXISTS examples;
+```
+
 ### Execution
+
+If we put all of the above steps together we can get an execution like the shown in the following gif:
+
+![](/img/blog/go_embed_db_migrations/demo.gif)
+
+## Conclusion
+
+As shown in this post, we can use the `embed` library and `go-migrate` tool to build binaries that can run and verify DB migrations.
+
+This is useful in multiple scenarios, such as building binaries for sidecar pods for Kubernetes deployments, or microservices that are self-contained with the DB migrations they require to be run.
 
 ## Links
 

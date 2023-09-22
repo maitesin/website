@@ -89,3 +89,5 @@ ENV/
 .ropeproject
 
 .hugo_build.lock
+
+**/.idea
