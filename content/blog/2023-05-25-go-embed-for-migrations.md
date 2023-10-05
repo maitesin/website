@@ -9,13 +9,13 @@ draft = false
 
 ## Introduction
 
-In this post we will explore an example of Go binary that combines several features available in order to have a self-contained binary that runs the appropriate migrations before starting any actual work.
+In this post we will explore an example of a Go binary that combines features such as [Go Embed](https://pkg.go.dev/embed) and [Go-Migrate](https://github.com/golang-migrate/migrate) to have a self-contained binary that runs the appropriate migrations before starting any actual work.
 
 ## What is embed?
 
 [Go Embed](https://pkg.go.dev/embed) was introduced in [Go 1.16](https://tip.golang.org/doc/go1.16#library-embed) as a core library that allows binaries to contain external files embedded and they are accessible from inside the binary.
 
-There are multiple way to benefit from this amazing feature, from packing your whole webapp with all its assets, to have binaries containing their DB migrations to always have the correct DB schema to interact with it.
+There are multiple ways to benefit from this amazing feature, from packing your whole webapp with all its assets, to have binaries containing their DB migrations to always have the correct DB schema to interact with it.
 
 *Note: I do not recommend to serve all webapp assets from the binary for webapps with high traffic load. Using Nginx, or a CDN would be a better way to do it.*
 
