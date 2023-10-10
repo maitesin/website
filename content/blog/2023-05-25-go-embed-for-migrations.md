@@ -151,7 +151,7 @@ DROP TABLE IF EXISTS examples;
 
 ### Execution
 
-If we put all of the above steps together, we can get an execution like the shown in the following gif:
+If we put all of the above steps together, we can get an execution like the one shown in the following gif:
 
 ![](/img/blog/go_embed_db_migrations/demo.gif)
 
