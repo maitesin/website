@@ -15,7 +15,7 @@ In this post we will explore an example of a Go binary that combines features su
 
 [Go Embed](https://pkg.go.dev/embed) was introduced in [Go 1.16](https://tip.golang.org/doc/go1.16#library-embed) as a core library that allows binaries to contain external files embedded and they are accessible from inside the binary.
 
-There are multiple ways to benefit from this amazing feature, from packing your whole webapp with all its assets, to have binaries containing their DB migrations to always have the correct DB schema to interact with it.
+There are multiple ways to benefit from this amazing feature, from packing your whole webapp with all its assets, to having binaries containing their DB migrations to always have the correct DB schema to interact with.
 
 *Note: I do not recommend to serve all webapp assets from the binary for webapps with high traffic load. Using Nginx, or a CDN would be a better way to do it.*
 
@@ -96,7 +96,7 @@ func main() {
 
 ### Extra setup
 
-Obviously you will need a DB, PostgreSQL in this example, to connect to in order to run the migrations. And the migration files to be placed in the correct location for the go binary to find them.
+Obviously you will need a DB - PostgreSQL in this example - to connect to in order to run the migrations. And the migration files to be placed in the correct location for the go binary to find them.
 
 For the example used in this post we have the following filesystem hierarchy:
 
@@ -113,7 +113,7 @@ For the example used in this post we have the following filesystem hierarchy:
 
 #### Docker for Postgres
 
-When I am developing I tend to work with a DB locally running inside Docker. So, for this example I have used the same approach. The following is the dockerfile that sets the PostgreSQL instance up.
+When I am developing, I tend to work with a DB locally running inside Docker. So, for this example I have used the same approach. The following is the dockerfile that sets the PostgreSQL instance up.
 
 Please note that there is no entry point set up for it in order to do a migration. Since the migration will be done completely from the Go binary.
 
@@ -151,7 +151,7 @@ DROP TABLE IF EXISTS examples;
 
 ### Execution
 
-If we put all of the above steps together we can get an execution like the shown in the following gif:
+If we put all of the above steps together, we can get an execution like the shown in the following gif:
 
 ![](/img/blog/go_embed_db_migrations/demo.gif)
 
