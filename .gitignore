@@ -90,4 +90,6 @@ ENV/
 
 .hugo_build.lock
 
+public
+
 **/.idea
