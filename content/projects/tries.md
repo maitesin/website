@@ -82,4 +82,4 @@ Radix Tree (also radix trie or compact prefix tree) is a data structure that rep
 
 ### Results
 
-All results can be seen [here](https://oscarforner.com/blog/prefix-trees-comparison/)
+All results can be seen [here](https://oscar.forner.es/blog/prefix-trees-comparison/)

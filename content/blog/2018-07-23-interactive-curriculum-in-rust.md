@@ -24,4 +24,4 @@ and you will get something similar to:
 
 ![rust-cv](/img/projects/cv.gif)
 
-**For more information about the project please visit [https://oscarforner.com/projects/resume](https://oscarforner.com/projects/resume)**.
+**For more information about the project please visit [https://oscar.forner.es/projects/resume](https://oscar.forner.es/projects/resume)**.
