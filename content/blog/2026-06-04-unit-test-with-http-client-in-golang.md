@@ -1,6 +1,6 @@
 +++
 title = "Unit test with HTTP client in Go"
-date = "2026-05-10T00:00:00+00:00"
+date = "2026-06-04T00:00:00+00:00"
 author = "Oscar Forner"
 tags = ["Go"]
 categories = ["Development", "Unit test", "HTTP"]
